@@ -34,9 +34,19 @@ Route::get('/sugar/steam', 'SugarController@steam');
 Route::get('/sugar/water', 'SugarController@water');
 
 // Menu Mixing
-Route::get('/mixing', function () {
-    return view('maintenance.mixing.index');
-});
+Route::get('/mixing', 'MixingController@index');
+Route::get('/mixing/the', 'MixingController@the');
+Route::get('/mixing/ndc', 'MixingController@ndc');
+Route::get('/mixing/powder1', 'MixingController@powder1');
+Route::get('/mixing/powder2', 'MixingController@powder2');
+Route::get('/mixing/acid', 'MixingController@acid');
+Route::get('/mixing/supply', 'MixingController@supply');
+Route::get('/mixing/mixing1', 'MixingController@mixing1');
+Route::get('/mixing/mixing2', 'MixingController@mixing2');
+Route::get('/mixing/mixing3', 'MixingController@mixing3');
+Route::get('/mixing/mixing4', 'MixingController@mixing4');
+Route::get('/mixing/mixing5', 'MixingController@mixing5');
+
 Route::get('/filling', function () {
     return view('maintenance.filling.index');
 });
