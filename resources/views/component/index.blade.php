@@ -17,7 +17,7 @@
     <div class="col-md-8 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
+                <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
             </div>
             @if (session('status'))
                     <div class="alert alert-success">

@@ -83,7 +83,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-power-off"></i>
+                                    <i class="mdi mdi-logout"></i>
                                     {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -119,11 +119,11 @@
                             <li> <a href="{{ url('/user')}} "><i class="mdi mdi-worker"></i><span class="hide-menu">Master User</span></a> </li>
                         </ul>
                     </li>
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
+                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-bug"></i><span class="hide-menu">Component History</span></a> </li>
-                            <li> <a href="#"><i class="mdi mdi-cube"></i><span class="hide-menu">Barang Keluar</span></a> </li>
-                            <li> <a href="#"><i class="mdi mdi-worker"></i><span class="hide-menu">Barang Masuk</span></a> </li>
+                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu">Component History</span></a> </li>
+                            <li> <a href="#"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu">Barang Keluar</span></a> </li>
+                            <li> <a href="#"><i class="mdi mdi-plus-box-outline"></i><span class="hide-menu">Barang Masuk</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>

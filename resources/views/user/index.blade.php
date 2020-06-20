@@ -1,14 +1,14 @@
 @extends('layouts.master')
-@section('tittle') Master Position @endsection
+@section('tittle') Master User @endsection
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Position</h4> </div>
+        <h4 class="page-title">Master User</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
         <ol class="breadcrumb">
             <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Master Position</a></li>
+            <li class="active"><a href="#">Master User</a></li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -16,9 +16,9 @@
 <div class="row">
     <div class="col-md-8">
         <div class="panel">
-            <div class="panel-heading">
+            {{-- <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
-            </div>
+            </div> --}}
             @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status')}}
@@ -30,26 +30,26 @@
                         <thead>
                             <tr>
                                 <th width="70" class="text-center">#</th>
-                                <th>ID</th>
-                                <th>POSISI</th>
-                                <th>AKSI</th>
+                                <th>NAMA </th>
+                                <th>EMAIL</th>
+                                <th>TANGGAL DIBUAT</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($positions as $positions)
+                            @foreach ($user as $user)
                             <tr>
                                 <th scope="row"> &emsp; {{ $loop->iteration }}</th>
-                                <td><?=$positions->id; ?></td>
-                                <td><?=$positions->nama; ?></td>
-                                <td>
-                                    <form action="/position/{{ $positions->id }}/delete" method="POST">
+                                <td><?=$user->name; ?></td>
+                                <td><?=$user->email; ?></td>
+                                <td><?=$user->created_at; ?></td>
+                                {{-- <td>
+                                    <form action="/position/{{ $user->id }}/delete" method="POST">
                                         @method('delete')
                                         @csrf
-                                        <a href="/position/{{ $positions->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a>
+                                        <a href="/position/{{ $user->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5 d-inline" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                    {{-- <a href="/position/{{ $data->id }}/delete" class="btn btn-danger btn-outline btn-circle btn-md m-r-10" onclick="return confirm('Yakin mau hapus datanya niih??')"><i class="ti-trash"></i></a> --}}
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
