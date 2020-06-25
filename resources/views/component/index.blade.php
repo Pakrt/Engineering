@@ -43,7 +43,8 @@
                                 <th scope="row"> &emsp; {{ $loop->iteration }}</th>
                                 <td>{{ $components->id_komponen }}</td>
                                 <td>{{ $components->komponen }}</td>
-                                <td>{{ $components->position->nama }}</td>
+                                {{-- <td>{{ $components->position->nama }}</td> --}}
+                                <td>{{ $components->id_posisi }}</td>
                                 <td class="d-inline">
                                     <form action="/component/{{ $components->id }}/delete" method="POST">
                                         @method('delete')
