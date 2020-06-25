@@ -35,7 +35,7 @@ Route::get('/sugar/syrup', 'SugarController@syrup');
 Route::get('/sugar/steam', 'SugarController@steam');
 Route::get('/sugar/water', 'SugarController@water');
 
-// Menu Mixing
+// Maintenance Mixing
 Route::get('/mixing', 'MixingController@index');
 Route::get('/mixing/the', 'MixingController@the');
 Route::get('/mixing/ndc', 'MixingController@ndc');
@@ -49,9 +49,26 @@ Route::get('/mixing/mixing3', 'MixingController@mixing3');
 Route::get('/mixing/mixing4', 'MixingController@mixing4');
 Route::get('/mixing/mixing5', 'MixingController@mixing5');
 
-Route::get('/filling', function () {
-    return view('maintenance.filling.index');
-});
+// Maintenance Filling
+Route::get('/filling', 'FillingController@index');
+Route::get('/filling/gf1', 'FillingController@gf1');
+Route::get('/filling/gf2', 'FillingController@gf2');
+Route::get('/filling/gf3', 'FillingController@gf3');
+Route::get('/filling/gf4', 'FillingController@gf4');
+Route::get('/filling/gf5', 'FillingController@gf5');
+Route::get('/filling/konveyorfilling', 'FillingController@konveyorfilling');
+Route::get('/filling/transferpasteur', 'FillingController@transferpasteur');
+Route::get('/filling/pasteur', 'FillingController@pasteur');
+Route::get('/filling/transfercooling', 'FillingController@transfercooling');
+Route::get('/filling/cooling1', 'FillingController@cooling1');
+Route::get('/filling/cooling2', 'FillingController@cooling2');
+Route::get('/filling/transferdrying', 'FillingController@transferdrying');
+Route::get('/filling/drying1', 'FillingController@drying1');
+Route::get('/filling/drying2', 'FillingController@drying2');
+Route::get('/filling/transferpembagi', 'FillingController@transferpembagi');
+Route::get('/filling/pembagi', 'FillingController@pembagi');
+
+
 Route::get('/packaging', function () {
     return view('maintenance.packaging.index');
 });
