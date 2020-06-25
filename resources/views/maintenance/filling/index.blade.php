@@ -66,7 +66,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Conveyor Filling</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-table-row-remove text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/konveyorfilling') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Tf Pasteur</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-table-column-remove text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/transferpasteur') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Pasteur</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-page-layout-body text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/pasteur') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Tf Cooling</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-table-column-remove text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/transfercooling') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Cooling 1</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-tablet text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/cooling1') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -111,7 +111,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Cooling 2</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-tablet text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/cooling2') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -120,7 +120,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Tf Drying</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-table-column-remove text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/transferdrying') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Drying 1</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-fan text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/drying1') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Drying 2</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-fan text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/drying2') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -147,7 +147,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Tf Pembagi</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-table-column-remove text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/transferpembagi') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
@@ -156,7 +156,7 @@
                 <div class="white-box">
                     <h3 class="box-title">Pembagi</h3>
                     <ul class="list-inline two-part">
-                        <li><i class="mdi mdi-numeric-5-box-multiple-outline text-info"></i></li>
+                        <li><i class="mdi mdi-sign-caution text-info"></i></li>
                         <li class="text-right"><a href="{{ url('/filling/pembagi') }}"><i class="icon ti-arrow-right"></i></a></li>
                     </ul>
                 </div>
