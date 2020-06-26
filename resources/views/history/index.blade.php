@@ -31,7 +31,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>ID Komponen</th>
-                                <th class="text-center" >Dibuat tanggal</th>
+                                <th>Dibuat tanggal</th>
                                 <th>Keterangan</th>
                                 <th>Update Terakhir</th>
                                 <th>Action</th>
@@ -41,7 +41,7 @@
                             @foreach ($history as $history)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td><a href="/history/{{ $history->id_komponen }}/detail">&emsp;{{ $history->id_komponen }}</a></td>
+                                <td><a href="/history/{{ $history->id_komponen }}/detail">{{ $history->id_komponen }}</a></td>
                                 <td>&emsp;{{ $history->tanggal }}</td>
                                 <td>{{ $history->keterangan }}</td>
                                 <td>{{ $history->updated_at }}</td>
