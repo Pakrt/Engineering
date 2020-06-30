@@ -77,7 +77,7 @@
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="/crew/{{ Auth::user()->id }}/detail"><i class="ti-settings"></i> Account Setting</a></li>
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -112,18 +112,17 @@
                     <li class="devider"></li>
                     <li> <a href="{{ url('/home') }}"><i class="mdi mdi-home-variant"></i> <span class="hide-menu"> Dashboard</span></a></li>
                     <li> <a href="{{ url('/maintenance') }}"><i class="mdi mdi-wrench"></i> <span class="hide-menu"> Maintenance</span></a></li>
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu">Masters<span class="fa arrow"></span></span></a>
+                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu"> Masters<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/component') }}"><i class="mdi mdi-bug"></i><span class="hide-menu">Master Component</span></a> </li>
-                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-cube"></i><span class="hide-menu">Master Position</span></a> </li>
-                            <li> <a href="{{ url('/user')}} "><i class="mdi mdi-worker"></i><span class="hide-menu">Master User</span></a> </li>
+                            <li> <a href="{{ url('/component') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Master Component</span></a> </li>
+                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master Position</span></a> </li>
+                            <li> <a href="{{ url('/crew')}} "><i class="mdi mdi-worker"></i><span class="hide-menu"> Master Crew</span></a> </li>
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu">Component History</span></a> </li>
-                            <li> <a href="#"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu">Barang Keluar</span></a> </li>
-                            <li> <a href="#"><i class="mdi mdi-plus-box-outline"></i><span class="hide-menu">Barang Masuk</span></a> </li>
+                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Component History</span></a> </li>
+                            <li> <a href="#"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>

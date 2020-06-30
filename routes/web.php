@@ -3,17 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,10 +11,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'UserController@index');
-
 Route::get('/maintenance', function () {
     return view('maintenance.index');
 });
+
+// Menu Crew Engineering
+Route::get('/crew', 'CrewController@index');
+Route::post('/crew/create', 'CrewController@create');
+Route::get('/crew/{id}/detail', 'CrewController@show');
 
 // Menu Ruang Gula
 Route::get('/sugar', 'SugarController@index');
@@ -68,16 +61,28 @@ Route::get('/filling/drying2', 'FillingController@drying2');
 Route::get('/filling/transferpembagi', 'FillingController@transferpembagi');
 Route::get('/filling/pembagi', 'FillingController@pembagi');
 
+// Maintenance Packaging
+Route::get('/packaging', 'PackagingController@index');
+Route::get('/packaging/pama', 'PackagingController@pama');
+Route::get('/packaging/pamb', 'PackagingController@pamb');
+Route::get('/packaging/pamc', 'PackagingController@pamc');
+Route::get('/packaging/pamd', 'PackagingController@pamd');
+Route::get('/packaging/karton', 'PackagingController@karton');
+Route::get('/packaging/konveyorpama', 'PackagingController@konveyorpama');
+Route::get('/packaging/konveyorpamb', 'PackagingController@konveyorpamb');
+Route::get('/packaging/konveyorpamc', 'PackagingController@konveyorpamc');
+Route::get('/packaging/konveyorpamd', 'PackagingController@konveyorpamd');
+Route::get('/packaging/jb1', 'PackagingController@jb1');
+Route::get('/packaging/jb2', 'PackagingController@jb2');
 
-Route::get('/packaging', function () {
-    return view('maintenance.packaging.index');
-});
+// Master Position
 Route::get('/position', 'PositionController@index');
 Route::post('/position/create', 'PositionController@create');
 Route::get('/position/{id}/edit', 'PositionController@edit');
 Route::post('/position/{id}/update', 'PositionController@update');
 Route::delete('/position/{id}/delete', 'PositionController@destroy');
 
+// Master Component
 Route::get('/component', 'ComponentController@index');
 Route::post('/component/create', 'ComponentController@create');
 Route::get('/component/{id_komponen}/detail', 'ComponentController@show');
@@ -85,6 +90,7 @@ Route::get('/component/{id}/edit', 'ComponentController@edit');
 Route::post('/component/{id}/update', 'ComponentController@update');
 Route::delete('/component/{id}/delete', 'ComponentController@destroy');
 
+// Master History
 Route::get('/history', 'HistoryController@index');
 Route::get('/history/{id_komponen}/detail', 'HistoryController@show');
 Route::post('/history/create', 'HistoryController@create');

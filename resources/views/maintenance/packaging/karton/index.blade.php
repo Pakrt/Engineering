@@ -6,24 +6,43 @@
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Component</h4> </div>
+        <h4 class="page-title">Komponen Carton Erector</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
         <ol class="breadcrumb">
             <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Master Component</a></li>
+            <li><a href="{{ url('/maintenance') }}">Maintenance</a></li>
+            <li><a href="{{ url('/packaging') }}">Packaging</a></li>
+            <li class="active">Carton Erector</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 col-md-8">
         <div class="panel">
             <div class="white-box">
-                <h3 class="box-title m-b-0">Data Table</h3>
-                <p class="text-muted m-b-30">Data table example</p>
                 <div class="table-responsive">
-                    <label> {{ $komponen }}</label>
+                    <table id="myTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>ID Komponen</th>
+                                <th>Nama Komponen</th>
+                                <th>Posisi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($karton as $karton)
+                            <tr>
+                                <th scope="row">&emsp; {{ $loop->iteration}}</th>
+                                <td><a href="/history/{{$karton->id_komponen}}/detail">{{$karton->id_komponen}}</a></td>
+                                <td><a href="/history/{{$karton->id_komponen}}/detail">{{$karton->komponen}}</a></td>
+                                <td>{{$karton->position->nama}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

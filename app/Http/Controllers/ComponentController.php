@@ -39,7 +39,7 @@ class ComponentController extends Controller
     public function edit($id)
     {
         $component = \App\Component::find($id);
-        return view('component.edit', ['component'=>$component]);
+        return view('component.edit', compact('component'));
     }
 
     public function update(Request $request, $id)
