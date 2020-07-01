@@ -68,11 +68,11 @@
                         </form>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="/assets/plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ Auth::user()->name }}</b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="/assets/plugins/images/users/nouser.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ Auth::user()->name }}</b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="/assets/plugins/images/users/varun.jpg" alt="user" /></div>
+                                    <div class="u-img"><img src="/assets/plugins/images/users/nouser.jpg" alt="user" /></div>
                                     <div class="u-text"><h4>{{ Auth::user()->name }}</h4><p class="text-muted">{{ Auth::user()->email }}</p></div>
                                 </div>
                             </li>
@@ -106,7 +106,7 @@
                 <ul class="nav" id="side-menu">
                     <li class="user-pro">
                         <a href="#">
-                            <img src="/assets/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">{{Auth::user()->name }}</span>
+                            <img src="/assets/plugins/images/users/nouser.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">{{Auth::user()->name }}</span>
                         </a>
                     </li>
                     <li class="devider"></li>
@@ -122,7 +122,7 @@
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Component History</span></a> </li>
-                            <li> <a href="#"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
+                            <li> <a href="{{ url('/downtime') }}"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>

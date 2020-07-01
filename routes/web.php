@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DowntimeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -98,3 +99,10 @@ Route::get('/history/{id}/edit', 'HistoryController@edit');
 Route::post('/history/{id}/update', 'HistoryController@update');
 Route::delete('/history/{id}/delete', 'HistoryController@destroy');
 
+// Downtime
+Route::get('/downtime', 'DowntimeController@index');
+Route::get('/downtime/form', 'DowntimeController@form');
+Route::post('/downtime/create', 'DowntimeController@create');
+Route::get('/downtime/{id}/edit', 'DowntimeController@edit');
+Route::post('/downtime/{id}/update', 'DowntimeController@update');
+Route::delete('/downtime/{id}/delete', 'DowntimeController@destroy');

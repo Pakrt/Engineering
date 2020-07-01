@@ -19,25 +19,27 @@
         <form method="POST" action="/history/{{ $history->id }}/update">
             @csrf
             <div class="form-group">
-                <label class="col-md-12" for="id_komponen">ID Komponen</label>
-                <div class="col-md-12">
+                <label for="id_komponen">ID Komponen</label>
+                <div>
                     <input type="text" class="form-control" id="id_komponen" name="id_komponen" value="{{$history->id_komponen}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-12" for="tanggal">Tanggal</label>
-                <div class="col-md-12">
+                <label for="tanggal">Tanggal</label>
+                <div>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{$history->tanggal}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-12" for="keterangan">Keterangan</label>
-                <div class="col-md-12">
+                <label for="keterangan">Keterangan</label>
+                <div>
                     <textarea type="text" class="form-control" id="keterangan" name="keterangan" required>{{$history->keterangan}}</textarea>
                 </div>
             </div>
-            <a href="{{ url('/history') }}" class="btn btn-warning" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
+            <div class="modal-footer">
+                <a href="{{ url('/history') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
+            </div>
         </form>
     </div>
 </div>

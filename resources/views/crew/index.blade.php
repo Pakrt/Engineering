@@ -30,9 +30,10 @@
                         <thead>
                             <tr>
                                 <th width="70" class="text-center">#</th>
-                                <th>Nama </th>
+                                <th>Nama</th>
+                                <th>Jenis Kelamin</th>
                                 <th>Scope</th>
-                                <th>Masuk Tanggal</th>
+                                <th>Kontak</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,8 +41,9 @@
                             <tr>
                                 <th scope="row"> &emsp; {{ $loop->iteration }}</th>
                                 <td><?=$crew->nama; ?></td>
+                                <td><?=$crew->jenis_kelamin; ?></td>
                                 <td><?=$crew->scope; ?></td>
-                                <td><?=$crew->created_at; ?></td>
+                                <td><?=$crew->kontak; ?></td>
                                 {{-- <td>
                                     <form action="/position/{{ $user->id }}/delete" method="POST">
                                         @method('delete')
@@ -67,6 +69,14 @@
                 <div class="modal-body">
                     <form action="/crew/create" method="POST">
                         @csrf
+                        <div class="form-group">
+                            <label for="role" class="control-label">Role</label>
+                            <select type="text" name="role" class="form-control" id="role">
+                                <option value="Admin">Admin</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Lain-lain">Lain-lain</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="nama" class="control-label">Nama</label>
                             <input name="nama" type="text" class="form-control" id="nama" required>

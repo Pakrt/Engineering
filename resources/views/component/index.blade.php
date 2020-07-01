@@ -72,15 +72,15 @@
                         @csrf
                         <div class="form-group">
                             <label for="id_komponen" class="control-label">ID Komponen</label>
-                            <input name="id_komponen" type="text" class="form-control" id="id_komponen">
+                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" required>
                         </div>
                         <div class="form-group">
                             <label for="komponen" class="control-label">Nama Komponen</label>
-                            <input type="text" name="komponen" class="form-control" id="komponen">
+                            <input type="text" name="komponen" class="form-control" id="komponen" required>
                         </div>
                         <div class="form-group">
                             <label for="id_posisi" class="control-label">ID Posisi</label>
-                            <select type="text" name="id_posisi" class="form-control" id="id_posisi">
+                            <select type="text" name="id_posisi" class="form-control" id="id_posisi" required>
                                 @foreach ($position as $position)
                                 <option value="{{ $position->id }}">{{ $position->nama }}</option>
                                 @endforeach

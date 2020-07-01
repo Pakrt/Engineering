@@ -21,7 +21,7 @@ class CrewController extends Controller
     public function create(Request $request)
     {
         $user = new \App\User;
-        $user->role = 'crew';
+        $user->role = $request->role;
         $user->name = $request->nama;
         $user->email = $request->email;
         $user->password = bcrypt('engineering');

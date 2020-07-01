@@ -19,14 +19,14 @@
             @csrf
             <div class="form-group">
                 <label for="id_posisi" class="control-label">ID Posisi:</label>
-                <input name="id" type="text" class="form-control" id="id_posisi" value="{{$position->id}}">
+                <input name="id" type="text" class="form-control" id="id_posisi" value="{{$position->id}}" required>
             </div>
             <div class="form-group">
-                <label for="nama" class="control-label">Message:</label>
-                <input type="text" name="nama" class="form-control" id="nama" value="{{$position->nama}}">
+                <label for="nama" class="control-label">Nama Posisi</label>
+                <input type="text" name="nama" class="form-control" id="nama" value="{{$position->nama}}" required>
             </div>
             <div class="modal-footer">
-                <a href="{{ url('/position') }}" class="btn btn-warning" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+                <a href="{{ url('/position') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
                 <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
             </div>
         </form>

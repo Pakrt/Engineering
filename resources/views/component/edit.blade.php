@@ -19,25 +19,27 @@
         <form method="POST" action="/component/{{ $component->id }}/update">
             @csrf
             <div class="form-group">
-                <label class="col-md-12" for="id_komponen">Masukkan ID Komponen</label>
-                <div class="col-md-12">
+                <label for="id_komponen">Masukkan ID Komponen</label>
+                <div>
                     <input type="text" class="form-control" id="id_komponen" name="id_komponen" value="{{$component->id_komponen}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-12" for="komponen">Masukkan Nama Komponen</label>
-                <div class="col-md-12">
+                <label for="komponen">Masukkan Nama Komponen</label>
+                <div>
                     <input type="text" class="form-control" id="komponen" name="komponen" value="{{$component->komponen}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-12" for="id_posisi">Masukkan ID Posisi</label>
-                <div class="col-md-12">
+                <label for="id_posisi">Masukkan ID Posisi</label>
+                <div>
                     <input type="text" class="form-control" id="id_posisi" name="id_posisi" value="{{$component->id_posisi}}" required>
                 </div>
             </div>
-            <a href="{{ url('/component') }}" class="btn btn-warning" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
+            <div class="modal-footer">
+                <a href="{{ url('/component') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
+            </div>
         </form>
     </div>
 </div>

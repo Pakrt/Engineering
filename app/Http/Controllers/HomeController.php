@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \App\Downtime;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $day = Carbon::now()->format('d');
+        // $month = Carbon::now()->format('m');
+        // $year = Carbon::now()->format('Y');
+
+        // Downtime::whereDate($day);
+        // Downtime::whereMonth($month);
+        // Downtime::whereYear($year);
+        // $downtime = Downtime::where('durasi', '<=', 10);
+        $downtime = Downtime::all();
+        $total = Downtime::where('durasi', '>', 0)->sum('durasi');
+        return view('home', compact('downtime', 'total'));
     }
 }
