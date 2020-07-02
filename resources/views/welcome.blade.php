@@ -65,61 +65,89 @@
         </style>
     </head>
     <body>
-        <div class="">
-
-            {{-- <div class="content"> --}}
-                {{-- <div class="title m-b-md">
-                    Sistem Informasi Engineering <br>
-                    <small><a href="http://www.inacofood.com/id/home-id/" target="_blank" >INACO</a></small>
-                </div> --}}
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" style="font-size: 20px">Sistem Informasi Engineering</div>
-                            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="font-size: 20px">Sistem Informasi Engineering</div>
+                    @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="btn btn-dark"><h5>Login</h5></a>
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif --}}
-                    @endauth
-                </div>
-                @endif
-                            <div class="panel-wrapper p-b-10 collapse in">
-                                <div id="owl-demo" class="owl-carousel owl-theme">
-                                    <div class="item"><img src="/assets/plugins/images/heading-bg/11.jpg" alt="Owl Image"></div>
-                                    <div class="item"><img src="/assets/plugins/images/heading-bg/21.jpg" alt="Owl Image"></div>
-                                    <div class="item"><img src="/assets/plugins/images/heading-bg/31.jpg" alt="Owl Image"></div>
-                                    {{-- <div class="item"><img src="/assets/plugins/images/heading-bg/.jpg" alt="Owl Image"></div>
-                                    <div class="item"><img src="/assets/plugins/images/heading-bg/.jpg" alt="Owl Image"></div>
-                                    <div class="item"><img src="/assets/plugins/images/heading-bg/.jpg" alt="Owl Image"></div> --}}
-                                </div>
+                        @endauth
+                    </div>
+                    @endif
+                    <div class="panel-wrapper p-b-10 collapse in">
+                        {{-- <div id="owl-demo" class="owl-carousel owl-theme">
+                            <div class="item" data-interval="2000" ><img src="/assets/plugins/images/heading-bg/11.jpg" alt="Owl Image"></div>
+                            <div class="item" data-interval="2000" ><img src="/assets/plugins/images/heading-bg/21.jpg" alt="Owl Image"></div>
+                            <div class="item" data-interval="2000" ><img src="/assets/plugins/images/heading-bg/31.jpg" alt="Owl Image"></div>
+                        </div> --}}
+
+                        {{-- <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active" data-interval="2000">
+                                <img src="/assets/plugins/images/heading-bg/11.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item" data-interval="2000">
+                                <img src="/assets/plugins/images/heading-bg/21.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item" data-interval="2000">
+                                <img src="/assets/plugins/images/heading-bg/31.jpg" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                        </div> --}}
+
+                        <div id="carousel-example-captions-3" data-ride="carousel" class="carousel slide">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-captions-3" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-captions-3" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-captions-3" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-captions-3" data-slide-to="3"></li>
+                                <li data-target="#carousel-example-captions-3" data-slide-to="4"></li>
+                            </ol>
+                            <div role="listbox" class="carousel-inner">
+                                <div class="item active"> <img src="/assets/plugins/images/heading-bg/11.jpg" alt="First slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/21.jpg" alt="Second slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/31.jpg" alt="Third slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/171.jpeg" alt="Fourth slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/1721.jpeg" alt="Fifth slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/1731.jpeg" alt="Sixth slide image"> </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            {{-- </div> --}}
             </div>
+        </div>
 
         <!-- jQuery -->
-    <script src="/assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Menu Plugin JavaScript -->
-    <script src="/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-    <!--slimscroll JavaScript -->
-    <script src="/assets/js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="/assets/js/waves.js"></script>
-    <!-- jQuery for carousel -->
-    <script src="/assets/plugins/bower_components/owl.carousel/owl.carousel.min.js"></script>
-    <script src="/assets/plugins/bower_components/owl.carousel/owl.custom.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/custom.min.js"></script>
-    <!--Style Switcher -->
-    <script src="/assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="/assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+        <!--slimscroll JavaScript -->
+        <script src="/assets/js/jquery.slimscroll.js"></script>
+        <!--Wave Effects -->
+        <script src="/assets/js/waves.js"></script>
+        <!-- jQuery for carousel -->
+        <script src="/assets/plugins/bower_components/owl.carousel/owl.carousel.min.js"></script>
+        <script src="/assets/plugins/bower_components/owl.carousel/owl.custom.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="/assets/js/custom.min.js"></script>
+        <!--Style Switcher -->
+        <script src="/assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     </body>
 </html>
