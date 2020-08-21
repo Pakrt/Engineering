@@ -37,4 +37,19 @@ class HomeController extends Controller
         $total = Downtime::where('durasi', '>', 0)->sum('durasi');
         return view('home', compact('downtime', 'total'));
     }
+
+    public function report()
+    {
+        $downtime = DB::table('downtimes')
+                ->whereMonth('created_at', '8')
+                ->get();
+        // $downtime = Downtime::all();
+        $total = Downtime::where('durasi', '>', 0)->sum('durasi');
+        return view('report', compact('downtime', 'total'));
+    }
+
+    public function master ()
+    {
+        return view('master.index');
+    }
 }

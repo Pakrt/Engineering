@@ -1,17 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Crew;
 use Illuminate\Http\Request;
 
 class CrewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $crew = Crew::all();
@@ -24,12 +19,12 @@ class CrewController extends Controller
         $user->role = $request->role;
         $user->name = $request->nama;
         $user->email = $request->email;
-        $user->password = bcrypt('engineering');
+        $user->password = bcrypt('rahasia');
         $user->save();
 
         $request->request->add(['user_id' => $user->id]);
         $crew = Crew::create($request->all());
-        return redirect('/crew')->with('status', 'Data berhasil ditambahkan !!');
+        return redirect('/crew')->with('status', 'Data user berhasil ditambahkan !!');
     }
 
     public function store(Request $request)
@@ -39,18 +34,28 @@ class CrewController extends Controller
 
     public function show($id)
     {
+        // $crew = User::find($id)->crew;
         $crew = Crew::find($id);
         return view('crew.show', compact('crew'));
     }
 
-    public function edit(Crew $crew)
+    public function edit($id)
     {
-        //
+        $crew = Crew::find($id);
+        return view('crew.edit', compact('crew'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $crew = Crew::find($id);
+        $crew->update($request->all());
+        if($request->hasFile('avatar'))
+        {
+            $request->file('avatar')->move('images/',$request->file('avatar')->getClientOriginalName());
+            $crew->avatar = $request->file('avatar')->getClientOriginalName();
+            $crew->save();
+        }
+        return redirect('/home')->with('status', ' Data berhasil diupdate !!');
     }
 
     public function destroy($id)

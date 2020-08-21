@@ -5,16 +5,17 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Component History</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Component History</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master') }}">Master</a></li>
+            <li class="active">Component History</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-xs-12">
             <div class="white-box">
                 <div class="panel-heading">
                     <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
@@ -33,18 +34,18 @@
                                 <th>ID Komponen</th>
                                 <th>Dibuat tanggal</th>
                                 <th>Keterangan</th>
-                                <th>PIC</th>
-                                <th>Action</th>
+                                {{-- <th>PIC</th>
+                                <th>Action</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($history as $history)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td><a href="/history/{{ $history->id_komponen }}/detail">{{ $history->id_komponen }}</a></td>
-                                <td>&emsp;{{ $history->tanggal }}</td>
+                                <td><a href="/history/{{ $history->id}}/rinci">{{ $history->id_komponen }}</a></td>
+                                <td>{{ $history->tanggal }}</td>
                                 <td>{{ $history->keterangan }}</td>
-                                <td>{{ $history->user }}</td>
+                                {{-- <td>{{ $history->user }}</td>
                                 <td>
                                     <form action="/history/{{ $history->id }}/delete" method="POST">
                                         @method('delete')
@@ -52,7 +53,7 @@
                                         <a href="/history/{{ $history->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-5"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>

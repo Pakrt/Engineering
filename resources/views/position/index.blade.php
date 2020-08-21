@@ -5,10 +5,11 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Master Position</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Master Position</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master') }}">Master</a></li>
+            <li class="active">Master Position</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -29,10 +30,10 @@
                     <table id="myTable" class="table table-striped">
                         <thead>
                             <tr>
-                                <th width="70" class="text-center">#</th>
+                                <th width="50" class="text-center">#</th>
                                 <th>ID</th>
                                 <th>POSISI</th>
-                                <th>AKSI</th>
+                                <th width="80">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>

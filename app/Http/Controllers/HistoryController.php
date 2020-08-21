@@ -28,7 +28,14 @@ class HistoryController extends Controller
     {
         $komponen = History::where('id_komponen', $id_komponen)
         ->get();
-        return view('history.show', compact('komponen'));
+        $data = $id_komponen;
+        return view('history.show', compact('komponen', 'data'));
+    }
+
+    public function rinci($id)
+    {
+        $history = History::find($id);
+        return view('history.detail', compact('history'));
     }
 
     public function edit($id)
@@ -49,5 +56,10 @@ class HistoryController extends Controller
         $history = History::find($id);
         $history->delete();
         return redirect('/history')->with('status', 'Data berhasil dihapus !!');
+    }
+
+    public function form()
+    {
+        return view('history.form');
     }
 }

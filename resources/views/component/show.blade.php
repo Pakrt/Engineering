@@ -8,22 +8,41 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Master Component</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Master Component</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/component') }}">Master Component</a></li>
+            <li class="active">Detail Component</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 col-md-6">
         <div class="panel">
             <div class="white-box">
-                <h3 class="box-title m-b-0">Data Table</h3>
-                <p class="text-muted m-b-30">Data table example</p>
-                <div class="table-responsive">
-                    <label> {{ $komponen }}</label>
+                <div class="panel panel-default">
+                    <div class="panel-wrapper collapse in">
+                        <div class="panel-header">
+                            <h3 style="text-align: center">{{$komponen->id_komponen}}</h3>
+                        </div>
+                        <div class="panel-header">
+                            <h4>Nama Komponen</h4>
+                            <p>{{$komponen->komponen}}</p>
+                            <h4>Posisi</h4>
+                            <p>{{$komponen->position->nama}}</p>
+                            <h4>Keterangan</h4>
+                            <p>{{$komponen->keterangan}}</p>
+                        </div>
+                        <div class="panel-footer">
+                            <form action="/component/{{ $komponen->id }}/delete" method="POST">
+                                @method('delete')
+                                @csrf
+                                <a href="/history/{{ $komponen->id_komponen }}/detail" class="btn btn-info btn-outline btn-circle btn-lg"><i class="ti-receipt"></i></a>
+                                <a href="/component/{{ $komponen->id }}/edit" class="btn btn-info btn-outline btn-circle btn-lg"><i class="ti-pencil-alt"></i></a>
+                                <button type="submit" class="btn btn-danger btn-outline btn-circle btn-lg" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
+                            </form>
+                        </div>
                 </div>
             </div>
 

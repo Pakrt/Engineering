@@ -60,14 +60,13 @@
 								Remember me
 							</label>
                         </div>
-
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
 						<div>
                             <a href="{{ route('password.request') }}" class="txt1">
-								{{-- Forgot your Password? --}}
+								Forgot your Password?
 							</a>
                         </div>
-                        @endif
+                        @endif --}}
                     </div>
 
 					<div class="container-login100-form-btn">

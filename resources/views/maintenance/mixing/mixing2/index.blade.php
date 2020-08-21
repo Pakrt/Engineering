@@ -8,11 +8,11 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Komponen Mixing 2</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li><a href="{{ url('/maintenance') }}">Maintenance</a></li>
-            <li><a href="{{ url('/mixing') }}">Mixing</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/maintenance') }}">Maintenance</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/mixing') }}">Mixing</a></li>
             <li class="active">Mixing 2</li>
         </ol>
     </div>
@@ -29,7 +29,6 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
-                                <th>Posisi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +37,6 @@
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$mixing2->id_komponen}}/detail">{{$mixing2->id_komponen}}</a></td>
                                 <td><a href="/history/{{$mixing2->id_komponen}}/detail">{{$mixing2->komponen}}</a></td>
-                                <td>{{$mixing2->position->nama}}</td>
                             </tr>
                             @endforeach
                         </tbody>

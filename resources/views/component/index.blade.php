@@ -3,12 +3,13 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Component</h4> </div>
+        <h4 class="page-title">Master Component Page</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Master Component</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master') }}">Master</a></li>
+            <li class="active">Master Component</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -26,33 +27,33 @@
                     </div>
                 @endif
             <div class="white-box">
-                <div class="table-responsive">
+                <div class="table-responsive m-t-5">
                     <table id="myTable" class="table table-striped">
                         <thead>
                             <tr>
-                                <th width="70" class="text-center">#</th>
+                                {{-- <th width="70" class="text-center">#</th> --}}
                                 <th>ID</th>
                                 <th>NAMA</th>
                                 <th>POSISI</th>
-                                <th>AKSI</th>
+                                {{-- <th>AKSI</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($components as $components)
                             <tr>
-                                <th scope="row"> &emsp; {{ $loop->iteration }}</th>
-                                <td>{{ $components->id_komponen }}</td>
+                                {{-- <th scope="row"> &emsp; {{ $loop->iteration }}</th> --}}
+                                <td><a href="/component/{{ $components->id}}/detail">{{ $components->id_komponen }}</a></td>
                                 <td>{{ $components->komponen }}</td>
                                 <td>{{ $components->position->nama }}</td>
                                 {{-- <td>{{ $components->id_posisi }}</td> --}}
-                                <td class="d-inline">
+                                {{-- <td class="d-inline">
                                     <form action="/component/{{ $components->id }}/delete" method="POST">
                                         @method('delete')
                                         @csrf
                                         <a href="/component/{{ $components->id }}/edit" class="btn btn-info btn-outline btn-circle btn-sm"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -79,12 +80,16 @@
                             <input type="text" name="komponen" class="form-control" id="komponen" required>
                         </div>
                         <div class="form-group">
-                            <label for="id_posisi" class="control-label">ID Posisi</label>
+                            <label for="id_posisi" class="control-label">Mesin</label>
                             <select type="text" name="id_posisi" class="form-control" id="id_posisi" required>
                                 @foreach ($position as $position)
-                                <option value="{{ $position->id }}">{{ $position->nama }}</option>
+                                <option value="{{ $position->id }}">{{ $position->id }} - {{ $position->nama }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="keterangan" class="control-label">Keterangan</label>
+                            <textarea class="form-control" name="keterangan" id="keterangan"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

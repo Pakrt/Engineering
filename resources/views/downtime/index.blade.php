@@ -5,10 +5,11 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Data Downtime</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li class="active"><a href="#">Data Downtime</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master') }}">Master</a></li>
+            <li class="active"><a href="#">Master Downtime</a></li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -29,26 +30,20 @@
                     <table id="example23" class="display block" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Tanggal</th>
                                 <th>Mesin</th>
                                 <th>Durasi<br>(menit)</th>
-                                <th>Tanggal</th>
-                                <th>Jam Mulai</th>
                                 <th>Keterangan</th>
-                                <th>PIC</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($downtime as $downtime)
                             <tr>
-                                <th scope="row">&emsp;{{ $loop->iteration }}</th>
+                                <td>&emsp;{{ $downtime->tanggal }}</td>
                                 <td>&emsp;{{ $downtime->id_posisi }}</td>
                                 <td>&emsp;{{ $downtime->durasi}}</td>
-                                <td>&emsp;{{ $downtime->tanggal }}</td>
-                                <td>&emsp;{{ $downtime->jam }}</td>
                                 <td>{{ $downtime->keterangan }}</td>
-                                <td>{{ $downtime->user }}</td>
                                 <td>
                                     <form action="/downtime/{{ $downtime->id }}/delete" method="POST">
                                         @method('delete')

@@ -41,7 +41,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $crew = User::find($id)->crew;
+        return view('user.show', compact('crew'));
     }
 
     /**
@@ -64,15 +65,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->update($request->all());
+        if($request->hasFile('avatar'))
+        {
+            $request->file('avatar')->move('images/',$request->file('avatar')->getClientOriginalName());
+            $user->avatar = $request->file('avatar')->getClientOriginalName();
+            $user->save();
+        }
+        return redirect('/home')->with('status', ' Data berhasil diupdate !!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

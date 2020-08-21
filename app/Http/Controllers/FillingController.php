@@ -123,4 +123,17 @@ class FillingController extends Controller
         return view('maintenance.filling.pembagi.index', compact('pembagi'));
     }
 
+    public function water()
+    {
+        $water = Component::where('id_posisi', '202')
+        ->get();
+        return view('maintenance.filling.water.index', compact('water'));
+    }
+
+    public function steam()
+    {
+        $steam = Component::where('id_posisi', '201')
+        ->get();
+        return view('maintenance.filling.steam.index', compact('steam'));
+    }
 }

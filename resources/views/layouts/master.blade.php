@@ -41,7 +41,7 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <!-- .Task dropdown -->
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-check-circle"></i>
                             <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
                         </a>
@@ -66,18 +66,21 @@
                         <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
                             <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
                         </form>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="/assets/plugins/images/users/nouser.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ Auth::user()->name }}</b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
+                            <img src="{{ Auth::user()->getAvatar() }}" alt="user-img" style="vertical-align:middle; width:50px; height:50px; border-radius:50%">
+                            <b class="hidden-xs">{{ Auth::user()->name }} </b><span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="/assets/plugins/images/users/nouser.jpg" alt="user" /></div>
+                                    <div class="u-img"><img src="{{ Auth::user()->getAvatar() }}" alt="user" /></div>
                                     <div class="u-text"><h4>{{ Auth::user()->name }}</h4><p class="text-muted">{{ Auth::user()->email }}</p></div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/crew/{{ Auth::user()->id }}/detail"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="/user/{{ Auth::user()->id }}/detail"><i class="ti-settings"></i> User Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -106,7 +109,8 @@
                 <ul class="nav" id="side-menu">
                     <li class="user-pro">
                         <a href="#">
-                            <img src="/assets/plugins/images/users/nouser.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">{{Auth::user()->name }}</span>
+                            <img src="{{ Auth::user()->getAvatar() }}" alt="user-img" class="img-circle" >
+                            <span class="hide-menu">{{Auth::user()->name }}</span>
                         </a>
                     </li>
                     <li class="devider"></li>
@@ -115,27 +119,19 @@
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu"> Masters<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="{{ url('/component') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Master Component</span></a> </li>
-                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master Position</span></a> </li>
                             <li> <a href="{{ url('/crew')}} "><i class="mdi mdi-worker"></i><span class="hide-menu"> Master Crew</span></a> </li>
+                            <li> <a href="{{ url('/downtime')}} "><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Master Downtime</span></a> </li>
+                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master History</span></a> </li>
+                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master Position</span></a> </li>
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Component History</span></a> </li>
-                            <li> <a href="{{ url('/downtime') }}"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
+                            <li> <a href="{{ url('/history/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form History</span></a> </li>
+                            <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-emoticon fa-fw"></i> <span class="hide-menu">Icons<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li> <a href="fontawesome.html"><i class="fa-fw">F</i><span class="hide-menu">Font awesome</span></a> </li>
-                            <li> <a href="themifyicon.html"><i class="fa-fw">T</i><span class="hide-menu">Themify Icons</span></a> </li>
-                            <li> <a href="simple-line.html"><i class="fa-fw">S</i><span class="hide-menu">Simple line Icons</span></a> </li>
-                            <li> <a href="material-icons.html"><i class="fa-fw">M</i><span class="hide-menu">Material Icons</span></a> </li>
-                            <li><a href="linea-icon.html"><i class="fa-fw">L</i><span class="hide-menu">Linea Icons</span></a></li>
-                            <li><a href="weather.html"><i class="fa-fw">W</i><span class="hide-menu">Weather Icons</span></a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>

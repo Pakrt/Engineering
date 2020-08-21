@@ -5,11 +5,11 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Master Component</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home')}}">Dashboard</a></li>
-            <li><a href="{{ url('/component')}}">Master Component</a></li>
-            <li class="active"><a href="#">Edit Component</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home')}}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/component')}}">Master Component</a></li>
+            <li class="active">Edit Component</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -19,26 +19,42 @@
         <form method="POST" action="/component/{{ $component->id }}/update">
             @csrf
             <div class="form-group">
-                <label for="id_komponen">Masukkan ID Komponen</label>
+                <label for="id_komponen">ID Komponen</label>
                 <div>
                     <input type="text" class="form-control" id="id_komponen" name="id_komponen" value="{{$component->id_komponen}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="komponen">Masukkan Nama Komponen</label>
+                <label for="komponen">Nama Komponen</label>
                 <div>
                     <input type="text" class="form-control" id="komponen" name="komponen" value="{{$component->komponen}}" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="id_posisi">Masukkan ID Posisi</label>
+                <label for="id_posisi" class="control-label">Mesin</label>
+                <select type="text" name="id_posisi" class="form-control" id="id_posisi" required>
+                    @foreach ($position as $position)
+                    <option value="{{ $position->id }}">{{ $position->id }} - {{ $position->nama }}</option>
+                    @endforeach
+                </select>
+                <span class="help-block"><small>{{ $component->id_posisi }} - {{ $component->position->nama }}</small></span>
+
+            </div>
+            {{-- <div class="form-group">
+                <label for="id_posisi">ID Posisi</label>
                 <div>
                     <input type="text" class="form-control" id="id_posisi" name="id_posisi" value="{{$component->id_posisi}}" required>
+                </div>
+            </div> --}}
+            <div class="form-group">
+                <label for="keterangan">Keterangan</label>
+                <div>
+                    <textarea class="form-control" name="keterangan" id="keterangan">{{$component->keterangan}}</textarea>
                 </div>
             </div>
             <div class="modal-footer">
                 <a href="{{ url('/component') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
-                <button type="submit" class="btn btn-primary" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
+                <button type="submit" class="btn btn-success" onclick="return confirm('Udah selesai update nya ??')">Update Data</button>
             </div>
         </form>
     </div>

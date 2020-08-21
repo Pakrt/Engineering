@@ -117,12 +117,13 @@
                                 <li data-target="#carousel-example-captions-3" data-slide-to="2"></li>
                                 <li data-target="#carousel-example-captions-3" data-slide-to="3"></li>
                                 <li data-target="#carousel-example-captions-3" data-slide-to="4"></li>
+                                <li data-target="#carousel-example-captions-3" data-slide-to="5"></li>
                             </ol>
                             <div role="listbox" class="carousel-inner">
                                 <div class="item active"> <img src="/assets/plugins/images/heading-bg/11.jpg" alt="First slide image"> </div>
                                 <div class="item"> <img src="/assets/plugins/images/heading-bg/21.jpg" alt="Second slide image"> </div>
                                 <div class="item"> <img src="/assets/plugins/images/heading-bg/31.jpg" alt="Third slide image"> </div>
-                                <div class="item"> <img src="/assets/plugins/images/heading-bg/171.jpeg" alt="Fourth slide image"> </div>
+                                <div class="item"> <img src="/assets/plugins/images/heading-bg/6239.jpg" alt="Fourth slide image"> </div>
                                 <div class="item"> <img src="/assets/plugins/images/heading-bg/1721.jpeg" alt="Fifth slide image"> </div>
                                 <div class="item"> <img src="/assets/plugins/images/heading-bg/1731.jpeg" alt="Sixth slide image"> </div>
                             </div>

@@ -5,17 +5,17 @@
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Component History</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+        <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
-            <li><a href="{{ url('/home') }}">Dashboard</a></li>
-            <li><a href="{{ url('/history' )}}">Component History</a></li>
-            <li class="active"><a href="#">History</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/home') }}">Dashboard</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/maintenance' )}}">Maintenance Component</a></li>
+            <li class="active"><a href="#">Component History</a></li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-xs-12">
             <div class="white-box">
                 <div class="panel-heading">
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
@@ -32,20 +32,20 @@
                             <tr>
                                 <th>#</th>
                                 <th>ID Komponen</th>
-                                <th class="text-center" >Dibuat tanggal</th>
+                                <th>Dibuat tanggal</th>
                                 <th>Keterangan</th>
-                                <th>Update Terakhir</th>
-                                <th>Action</th>
+                                {{-- <th>Update Terakhir</th>
+                                <th>Action</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($komponen as $history)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>&emsp;{{ $history->id_komponen }}</td>
-                                <td>&emsp;{{ $history->tanggal }}</td>
+                                <td><a href="/history/{{$history->id}}/rinci">{{ $history->id_komponen }}</a></td>
+                                <td>{{ $history->tanggal }}</td>
                                 <td>{{ $history->keterangan }}</td>
-                                <td>{{ $history->updated_at }}</td>
+                                {{-- <td>{{ $history->updated_at }}</td>
                                 <td>
                                     <form action="/history/{{ $history->id }}/delete" method="POST">
                                         @method('delete')
@@ -53,7 +53,7 @@
                                         <a href="/history/{{ $history->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-5"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -72,7 +72,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="id_komponen" class="control-label">ID Komponen</label>
-                            <input name="id_komponen" type="text" class="form-control" id="id_komponen">
+                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" value="{{ $data }}">
                         </div>
                         <div class="form-group">
                             <label for="tanggal" class="control-label">Tanggal</label>

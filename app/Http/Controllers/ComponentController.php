@@ -37,8 +37,9 @@ class ComponentController extends Controller
 
     public function edit($id)
     {
+        $position = Position::all();
         $component = Component::find($id);
-        return view('component.edit', compact('component'));
+        return view('component.edit', compact('component', 'position'));
     }
 
     public function update(Request $request, $id)
