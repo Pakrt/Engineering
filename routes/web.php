@@ -9,7 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/report', 'HomeController@report')->name('report');
 Route::get('/master', 'HomeController@master')->name('master');
 
 Auth::routes();
@@ -117,6 +116,7 @@ Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
 
     // Downtime
     Route::get('/downtime', 'DowntimeController@index');
+    Route::get('/report', 'DowntimeController@report');
     Route::get('/downtime/form', 'DowntimeController@form');
     Route::post('/downtime/create', 'DowntimeController@create');
     Route::get('/downtime/{id}/edit', 'DowntimeController@edit');

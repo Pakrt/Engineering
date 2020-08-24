@@ -20,49 +20,54 @@
         <div class="white-box">
              <div class="row row-in">
                   <div class="col-lg-3 col-sm-6 row-in-br">
-                    @if ($total>50)
+                    @if ($totalmonth>50)
                     <ul class="col-in">
-                        <li>
-                            <span class="circle circle-md bg-danger"><i class="ti-alert"></i></span>
-                        </li>
-                        <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
-                        <li class="col-middle">
-                            <h4>Downtime /W</h4>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?=$total?>" aria-valuemin="50" aria-valuemax="100" style="width: <?=$total?>%">
+                        <a href="/downtime">
+                            <li>
+                                <span class="circle circle-md bg-danger"><i class="ti-alert"></i></span>
+                            </li>
+                            <li class="col-last"><h3 class="counter text-right m-t-15"><?= $totalmonth ?></h3></li>
+                            <li class="col-middle">
+                                <h4>Downtime /M</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?=$totalmonth?>" aria-valuemin="50" aria-valuemax="100" style="width: <?=$totalmonth?>%"></div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        </a>
                     </ul>
                     @else
                     <ul class="col-in">
-                        <li>
-                            <span class="circle circle-md bg-warning"><i class="fa fa-clock-o"></i></span>
-                        </li>
-                        <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
-                        <li class="col-middle">
-                            <h4>Downtime /W</h4>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?=$total?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$total?>%">
+                        <a href="/downtime">
+                            <li>
+                                <span class="circle circle-md bg-warning"><i class="fa fa-clock-o"></i></span>
+                            </li>
+                            <li class="col-last"><h3 class="counter text-right m-t-15"><?= $totalmonth ?></h3></li>
+                            <li class="col-middle">
+                                <h4>Downtime /M</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?=$totalmonth?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$totalmonth?>%">
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        </a>
                     </ul>
                     @endif
                   </div>
                   <div class="col-lg-3 col-sm-6  b-0">
                     <ul class="col-in">
-                        <li>
-                            <span class="circle circle-md bg-primary"><i class="fa fa-clock-o"></i></span>
-                        </li>
-                        <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
-                        <li class="col-middle">
-                            <h4>Downtime /M</h4>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<?=$total?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$total/2?>%">
+                        <a href="/downtime">
+                            <li>
+                                <span class="circle circle-md bg-primary"><i class="fa fa-clock-o"></i></span>
+                            </li>
+                            <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
+                            <li class="col-middle">
+                                <h4>Downtime /Y</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<?=$total?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$total?>%">
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        </a>
                     </ul>
                   </div>
                 </div>

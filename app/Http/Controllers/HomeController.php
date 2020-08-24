@@ -25,27 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $day = Carbon::now()->format('d');
-        // $month = Carbon::now()->format('m');
-        // $year = Carbon::now()->format('Y');
-
-        // Downtime::whereDate($day);
-        // Downtime::whereMonth($month);
-        // Downtime::whereYear($year);
-        // $downtime = Downtime::where('durasi', '<=', 10);
-        $downtime = Downtime::all();
-        $total = Downtime::where('durasi', '>', 0)->sum('durasi');
-        return view('home', compact('downtime', 'total'));
-    }
-
-    public function report()
-    {
-        $downtime = DB::table('downtimes')
-                ->whereMonth('created_at', '8')
-                ->get();
-        // $downtime = Downtime::all();
-        $total = Downtime::where('durasi', '>', 0)->sum('durasi');
-        return view('report', compact('downtime', 'total'));
+        return view('home');
     }
 
     public function master ()

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Position;
 use App\Downtime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DowntimeController extends Controller
 {
@@ -56,4 +56,16 @@ class DowntimeController extends Controller
         $downtime->delete();
         return redirect('/downtime')->with('status', 'Data berhasil dihapus !!');
     }
+
+    public function report()
+    {
+        // $downtime = DB::table('downtimes')
+        //         ->whereMonth('tanggal', now())
+        //         ->get();
+        $downtime = Downtime::whereMonth('tanggal', now())->get();
+        $totalmonth = Downtime::whereMonth('tanggal', now())->sum('durasi');
+        $total = Downtime::whereYear('tanggal', now())->sum('durasi');
+        return view('downtime.report', compact('downtime', 'total', 'totalmonth'));
+    }
+
 }
