@@ -4,7 +4,7 @@
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
-        <h4 class="page-title">Report Page</h4>
+        <h4 class="page-title">Downtime Report Page</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
@@ -28,7 +28,7 @@
                             </li>
                             <li class="col-last"><h3 class="counter text-right m-t-15"><?= $totalmonth ?></h3></li>
                             <li class="col-middle">
-                                <h4>Downtime /M</h4>
+                                <h4>Monthly</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?=$totalmonth?>" aria-valuemin="50" aria-valuemax="100" style="width: <?=$totalmonth?>%"></div>
                                 </div>
@@ -43,7 +43,7 @@
                             </li>
                             <li class="col-last"><h3 class="counter text-right m-t-15"><?= $totalmonth ?></h3></li>
                             <li class="col-middle">
-                                <h4>Downtime /M</h4>
+                                <h4>Monthly</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?=$totalmonth?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$totalmonth?>%">
                                     </div>
@@ -61,7 +61,7 @@
                             </li>
                             <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
                             <li class="col-middle">
-                                <h4>Downtime /Y</h4>
+                                <h4>Yearly</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<?=$total?>" aria-valuemin="0" aria-valuemax="50" style="width: <?=$total?>%">
                                     </div>

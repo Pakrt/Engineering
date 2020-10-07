@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Agu 2020 pada 17.58
+-- Waktu pembuatan: 24 Sep 2020 pada 10.28
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -34,8 +34,8 @@ CREATE TABLE `components` (
   `id_posisi` varchar(10) NOT NULL,
   `komponen` varchar(255) NOT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -498,15 +498,15 @@ INSERT INTO `components` (`id`, `id_komponen`, `id_posisi`, `komponen`, `keteran
 (452, 'BMV-431BMVA04', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (453, 'BMV-431BMVA05', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (454, 'BMV-431BMVA06', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(455, 'BPV-431BPVC02', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-15 02:06:53'),
-(456, 'BPV-431BPVC03', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-15 02:08:18'),
+(455, 'BPV-431BPVC02', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-14 19:06:53'),
+(456, 'BPV-431BPVC03', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-14 19:08:18'),
 (457, 'BMV-431BMVA09', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (458, 'BMV-431BMVA10', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (459, 'BMV-431BMVA11', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (460, 'BMV-431BMVA12', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(461, 'BPV-431BPVC04', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-15 02:09:41'),
+(461, 'BPV-431BPVC04', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-14 19:09:41'),
 (462, 'BMV-431BMVA14', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(463, 'BPV-431BPVC05', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-15 02:11:33'),
+(463, 'BPV-431BPVC05', '431', 'Butterfly Pneumatic Valve', '-', '0000-00-00 00:00:00', '2020-08-14 19:11:33'),
 (464, 'BMV-431BMVA16', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (465, 'BMV-431BMVA17', '431', 'Butterfly Manual Valve', '-', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (466, 'ASV-431ASVC01', '431', 'Angle Seat Valve', 'K2F-40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -1529,8 +1529,8 @@ INSERT INTO `components` (`id`, `id_komponen`, `id_posisi`, `komponen`, `keteran
 (1481, 'MOT-194MOTM01', '194', 'Motor', 'PF 18-0200-15C-AS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (1482, 'MOT-194MOTM02', '194', 'Motor', 'PF 18-0200-15C-AS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (1483, 'REG-194REGI01', '194', 'Regulator', 'AW 2000-OZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(1484, 'BMV-431BMVA17', '431', 'Ball Manual Valve', NULL, '2020-08-15 01:53:26', '2020-08-15 01:53:26'),
-(1485, 'BPV-431BPVC01', '431', 'Ball Pneumatic Valve', NULL, '2020-08-15 01:54:33', '2020-08-15 01:54:33');
+(1484, 'BMV-431BMVA17', '431', 'Ball Manual Valve', NULL, '2020-08-14 18:53:26', '2020-08-14 18:53:26'),
+(1485, 'BPV-431BPVC01', '431', 'Ball Pneumatic Valve', NULL, '2020-08-14 18:54:33', '2020-08-14 18:54:33');
 
 -- --------------------------------------------------------
 
@@ -1549,7 +1549,7 @@ CREATE TABLE `crews` (
   `avatar` varchar(255) DEFAULT NULL,
   `scope` varchar(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1557,12 +1557,12 @@ CREATE TABLE `crews` (
 --
 
 INSERT INTO `crews` (`id`, `user_id`, `nama`, `tanggal_lahir`, `alamat`, `jenis_kelamin`, `kontak`, `avatar`, `scope`, `created_at`, `updated_at`) VALUES
-(1, '4', 'Maman', '1991-08-27', 'Trosobo, Jawa Tengah', 'Pria', '6287852936188', NULL, 'Utility', '2020-06-29 20:04:02', '2020-08-14 01:49:45'),
-(2, '5', 'Prima Anggraini', '1992-12-16', 'Lawang, Malang', 'Wanita', '6285649914084', 'studio1.jpg', 'Admin', '2020-06-30 18:45:02', '2020-08-15 04:17:12'),
-(3, '6', 'Super Admin', '2020-07-09', 'Niramas Pandaan Sejahtera', 'Pria', '2147483647', 'inaco1.jpg', 'Support', '2020-07-08 18:21:54', '2020-07-09 07:39:38'),
-(4, '7', 'Hendrik Tri Dharmawan', '1994-05-19', 'Kasri, Pandaan, Jawa Timur', 'Pria', '822435678', NULL, 'Packaging', '2020-07-08 18:55:58', '2020-07-09 01:55:58'),
-(5, '8', 'Rizal Taufiq', '1998-04-19', 'Perum Asabri blok A.05, Pandaan', 'Pria', '6282147777556', NULL, 'IT', '2020-08-13 19:54:29', '2020-08-14 02:54:29'),
-(6, '9', 'Aji Ganteng', '1998-06-04', 'aa', 'Pria', '6289509840108', NULL, 'Support', '2020-08-14 19:21:44', '2020-08-15 02:21:44');
+(1, '4', 'Maman', '1991-08-27', 'Trosobo, Jawa Tengah', 'Pria', '6287852936188', NULL, 'Utility', '2020-06-29 20:04:02', '2020-08-13 18:49:45'),
+(2, '5', 'Prima Anggraini', '1992-12-16', 'Lawang, Malang', 'Wanita', '6285649914084', 'studio1.jpg', 'Admin', '2020-06-30 18:45:02', '2020-08-14 21:17:12'),
+(3, '6', 'Super Admin', '2020-07-09', 'Niramas Pandaan Sejahtera', 'Pria', '2147483647', 'inaco1.jpg', 'Support', '2020-07-08 18:21:54', '2020-07-09 00:39:38'),
+(4, '7', 'Hendrik Tri Dharmawan', '1994-05-19', 'Kasri, Pandaan, Jawa Timur', 'Pria', '822435678', NULL, 'Packaging', '2020-07-08 18:55:58', '2020-07-08 18:55:58'),
+(5, '8', 'Rizal Taufiq', '1998-04-19', 'Perum Asabri blok A.05, Pandaan', 'Pria', '6282147777556', NULL, 'IT', '2020-08-13 19:54:29', '2020-08-13 19:54:29'),
+(6, '9', 'Aji Ganteng', '1998-06-04', 'aa', 'Pria', '6289509840108', NULL, 'Support', '2020-08-14 19:21:44', '2020-08-14 19:21:44');
 
 -- --------------------------------------------------------
 
@@ -1593,7 +1593,8 @@ INSERT INTO `downtimes` (`id`, `id_posisi`, `durasi`, `tanggal`, `jam`, `keteran
 (6, 'PAM A', 15, '2020-07-01', '10:30:00', 'Hendrik cuti, aswin cuti. Air cylinder rusak', 'Prima Anggraini', '2020-07-01 01:41:02', '2020-08-14 21:12:12'),
 (7, 'PAM A', 5, '2020-08-14', '10:30:00', 'Corong buntu', 'Rizal Taufiq', '2020-08-13 23:30:59', '2020-08-13 23:30:59'),
 (8, 'Jelly Boy 1', 10, '2020-08-14', '09:30:00', 'Rebound rusaq', 'Prima Anggraini', '2020-08-14 21:10:53', '2020-08-14 21:10:53'),
-(9, 'Jelly Boy 2', 10, '2020-08-17', '09:50:00', 'Rebound abis, Pak Amir lupa beli', 'Prima Anggraini', '2020-08-21 07:35:45', '2020-08-21 07:35:45');
+(9, 'Jelly Boy 2', 10, '2020-08-17', '09:50:00', 'Rebound abis, Pak Amir lupa beli', 'Prima Anggraini', '2020-08-21 07:35:45', '2020-08-21 07:35:45'),
+(10, 'Carton Erector', 10, '2020-09-04', '10:40:00', 'Downtime iseng', 'Rizal Taufiq', '2020-08-23 19:34:55', '2020-08-23 19:34:55');
 
 -- --------------------------------------------------------
 
@@ -1676,8 +1677,8 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `positions` (
   `id` int(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1830,7 +1831,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1486;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1487;
 
 --
 -- AUTO_INCREMENT untuk tabel `crews`
@@ -1842,7 +1843,7 @@ ALTER TABLE `crews`
 -- AUTO_INCREMENT untuk tabel `downtimes`
 --
 ALTER TABLE `downtimes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
