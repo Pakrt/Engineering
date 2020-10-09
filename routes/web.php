@@ -122,5 +122,6 @@ Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
     Route::get('/downtime/{id}/edit', 'DowntimeController@edit');
     Route::post('/downtime/{id}/update', 'DowntimeController@update');
     Route::delete('/downtime/{id}/delete', 'DowntimeController@destroy');
+    Route::get('/downtime/{id}/show', 'DowntimeController@show');
 });
 

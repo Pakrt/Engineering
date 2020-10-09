@@ -18,38 +18,46 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
-                    <h3 class="box-title">RUANG GULA</h3>
-                    <ul class="list-inline two-part">
-                        <li><i class="icon-link text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/sugar') }}"><i class="icon ti-arrow-right"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar') }}">
+                        <h3 class="box-title">RUANG GULA</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-link text-info"></i></li>
+                            <li class="text-right"><i class="icon ti-arrow-right"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
-                    <h3 class="box-title">MIXING</h3>
-                    <ul class="list-inline two-part">
-                        <li><i class="icon-folder-alt text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/mixing') }}"><i class="icon ti-arrow-right"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/mixing') }}">
+                        <h3 class="box-title">MIXING</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-folder-alt text-info"></i></li>
+                            <li class="text-right"><i class="icon ti-arrow-right"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
-                    <h3 class="box-title">FILLING</h3>
-                    <ul class="list-inline two-part">
-                        <li><i class="icon-wrench text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/filling') }}"><i class="icon ti-arrow-right"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/filling') }}">
+                        <h3 class="box-title">FILLING</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-wrench text-info"></i></li>
+                            <li class="text-right"><i class="icon ti-arrow-right"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
-                    <h3 class="box-title">PACKAGING</h3>
-                    <ul class="list-inline two-part">
-                        <li><i class="icon-link text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/packaging') }}"><i class="icon ti-arrow-right"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/packaging') }}">
+                        <h3 class="box-title">PACKAGING</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-link text-info"></i></li>
+                            <li class="text-right"><i class="icon ti-arrow-right"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
         </div>

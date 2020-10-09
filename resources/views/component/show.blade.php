@@ -3,6 +3,15 @@
 @section('content')
 {{-- <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
+<style>
+    h2{
+        font-family: Lucida;
+        text-align: center;
+    }
+    h3{
+        font-family: Lucida;
+    }
+</style>
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -24,15 +33,15 @@
                 <div class="panel panel-default">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-header">
-                            <h3 style="text-align: center">{{$komponen->id_komponen}}</h3>
+                            <h2 style="text-align: center">{{$komponen->id_komponen}}</h2>
                         </div>
                         <div class="panel-header">
-                            <h4>Nama Komponen</h4>
-                            <p>{{$komponen->komponen}}</p>
-                            <h4>Posisi</h4>
-                            <p>{{$komponen->position->nama}}</p>
-                            <h4>Keterangan</h4>
-                            <p>{{$komponen->keterangan}}</p>
+                            <h3>Nama Komponen</h3>
+                            <h4>&emsp;{{$komponen->komponen}}</h4>
+                            <h3>Posisi</h3>
+                            <h4>&emsp;{{$komponen->position->nama}}</h4>
+                            <h3>Keterangan</h3>
+                            <h4>&emsp;{{$komponen->keterangan}}</h4>
                         </div>
                         <div class="panel-footer">
                             <form action="/component/{{ $komponen->id }}/delete" method="POST">

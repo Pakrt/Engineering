@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-xs-12">
             <div class="white-box">
                 <div class="panel-heading">
                     <a href="/downtime/form" class="btn btn-info btn-outline"><i class="mdi mdi-plus"></i></a>
@@ -34,24 +34,23 @@
                                 <th>Mesin</th>
                                 <th>Durasi<br>(menit)</th>
                                 <th>Keterangan</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($downtime as $downtime)
                             <tr>
-                                <td>&emsp;{{ $downtime->tanggal }}</td>
-                                <td>&emsp;{{ $downtime->id_posisi }}</td>
-                                <td>&emsp;{{ $downtime->durasi}}</td>
-                                <td>{{ $downtime->keterangan }}</td>
-                                <td>
+                                <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->tanggal }}</a></td>
+                                <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->id_posisi }}</a></td>
+                                <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->durasi}}</a></td>
+                                <td><a href="/downtime/{{$downtime->id}}/show">{{ $downtime->keterangan }}</a></td>
+                                {{-- <td>
                                     <form action="/downtime/{{ $downtime->id }}/delete" method="POST">
                                         @method('delete')
                                         @csrf
                                         <a href="/downtime/{{ $downtime->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-5"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>

@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,9 @@
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$konveyorpamd->id_komponen}}/detail">{{$konveyorpamd->id_komponen}}</a></td>
                                 <td><a href="/history/{{$konveyorpamd->id_komponen}}/detail">{{$konveyorpamd->komponen}}</a></td>
+                                <td>
+                                    <a href="/component/{{$konveyorpamd->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

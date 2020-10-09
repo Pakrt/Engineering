@@ -19,7 +19,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-sm-12 col-md-6">
         <div class="panel">
             <div class="white-box">
                 <div class="table-responsive">
@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,9 @@
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$desinfektan->id_komponen}}/detail">{{$desinfektan->id_komponen}}</a></td>
                                 <td><a href="/history/{{$desinfektan->id_komponen}}/detail">{{$desinfektan->komponen}}</a></td>
+                                <td>
+                                    <a href="/component/{{$desinfektan->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -47,6 +51,11 @@
         </div>
     </div>
 </div>
+{{-- <div class="row">
+    <div class="col-sm-12 col-md-6">
+        <img src="/assets/pid/411.jpg" alt="411" height="800" width="800">
+    </div>
+</div> --}}
 
 <!-- jQuery -->
 <script src="/assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>

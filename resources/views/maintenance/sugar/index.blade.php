@@ -19,42 +19,52 @@
         <div class="row">
             <div class="col-lg-2 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">DESINFEKTAN</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/sugar/desinfektan') }}"><i class="mdi mdi-water-percent text-info"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar/desinfektan') }}">
+                        <h3 class="box-title">DESINFEKTAN</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="mdi mdi-water-percent text-info"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">HOT WATER</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/sugar/hotwater') }}"><i class="mdi mdi-water-percent text-info"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar/hotwater') }}">
+                        <h3 class="box-title">HOT WATER</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="mdi mdi-water-percent text-info"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">SYRUP</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/sugar/syrup') }}"><i class="mdi mdi-beer text-info"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar/syrup') }}">
+                        <h3 class="box-title">SYRUP</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="mdi mdi-beer text-info"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">STEAM</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/sugar/steam') }}"><i class="mdi mdi-weather-windy text-info"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar/steam') }}">
+                        <h3 class="box-title">STEAM</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="mdi mdi-weather-windy text-info"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">WATER</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/sugar/water') }}"><i class="mdi mdi-water text-info"></i></a></li>
-                    </ul>
+                    <a href="{{ url('/sugar/water') }}">
+                        <h3 class="box-title">WATER</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="mdi mdi-water text-info"></i></li>
+                        </ul>
+                    </a>
                 </div>
             </div>
         </div>

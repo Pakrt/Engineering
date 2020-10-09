@@ -39,7 +39,7 @@
                     <ul class="col-in">
                         <a href="/downtime">
                             <li>
-                                <span class="circle circle-md bg-warning"><i class="fa fa-clock-o"></i></span>
+                                <span class="circle circle-md bg-warning"><i class="mdi mdi-clock-alert"></i></span>
                             </li>
                             <li class="col-last"><h3 class="counter text-right m-t-15"><?= $totalmonth ?></h3></li>
                             <li class="col-middle">
@@ -57,7 +57,7 @@
                     <ul class="col-in">
                         <a href="/downtime">
                             <li>
-                                <span class="circle circle-md bg-primary"><i class="fa fa-clock-o"></i></span>
+                                <span class="circle circle-md bg-primary"><i class="mdi mdi-clock-alert"></i></span>
                             </li>
                             <li class="col-last"><h3 class="counter text-right m-t-15"><?= $total ?></h3></li>
                             <li class="col-middle">

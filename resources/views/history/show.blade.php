@@ -33,6 +33,7 @@
                                 <th>#</th>
                                 <th>ID Komponen</th>
                                 <th>Dibuat tanggal</th>
+                                <th>PIC</th>
                                 <th>Keterangan</th>
                                 {{-- <th>Update Terakhir</th>
                                 <th>Action</th> --}}
@@ -44,6 +45,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td><a href="/history/{{$history->id}}/rinci">{{ $history->id_komponen }}</a></td>
                                 <td>{{ $history->tanggal }}</td>
+                                <td>{{ $history->user }}</td>
                                 <td>{{ $history->keterangan }}</td>
                                 {{-- <td>{{ $history->updated_at }}</td>
                                 <td>
@@ -72,15 +74,19 @@
                         @csrf
                         <div class="form-group">
                             <label for="id_komponen" class="control-label">ID Komponen</label>
-                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" value="{{ $data }}">
+                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" value="{{ $data }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="tanggal" class="control-label">Tanggal</label>
-                            <input type="date" name="tanggal" class="form-control" id="tanggal">
+                            <input type="date" name="tanggal" class="form-control" id="tanggal" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user" class="control-label">PIC</label>
+                            <input type="text" name="user" class="form-control" id="user" value="{{Auth::user()->name}}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="keterangan" class="control-label">Keterangan</label>
-                            <textarea name="keterangan" class="form-control" id="keterangan"></textarea>
+                            <textarea name="keterangan" class="form-control" id="keterangan" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

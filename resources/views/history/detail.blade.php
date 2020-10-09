@@ -3,6 +3,15 @@
 @section('content')
 {{-- <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
+<style>
+    h2{
+        font-family: Lucida;
+        text-align: center;
+    }
+    h3{
+        font-family: Lucida;
+    }
+</style>
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -24,15 +33,15 @@
                 <div class="panel panel-default">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-header">
-                            <h3 style="text-align: center">{{$history->id_komponen}}</h3>
+                            <h2>{{$history->id_komponen}}</h2>
                         </div>
                         <div class="panel-body">
-                            <h4>Keterangan</h4>
-                            <p>{{$history->keterangan}}</p>
-                            <h4>Tanggal</h4>
-                            <p>{{$history->tanggal}}</p>
-                            <h4>User</h4>
-                            <p>{{$history->user}}</p>
+                            <h3>Keterangan</h3>
+                            <h4>&emsp;{{$history->keterangan}}</h4>
+                            <h3>Tanggal</h3>
+                            <h4>&emsp;{{$history->tanggal}}</h4>
+                            <h3>User</h3>
+                            <h4>&emsp;{{$history->user}}</h4>
                         </div>
                         <div class="panel-footer">
                             <form action="/history/{{ $history->id }}/delete" method="POST">

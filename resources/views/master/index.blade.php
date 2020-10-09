@@ -18,46 +18,51 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
+                    <a href="{{ url('/component') }}">
                     <h3 class="box-title">Component</h3>
                     <ul class="list-inline two-part">
                         <li><i class="icon-link text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/component') }}"><i class="icon ti-arrow-right"></i></a></li>
+                        <li class="text-right"><i class="icon ti-arrow-right"></i></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
+                    <a href="{{ url('/history') }}">
                     <h3 class="box-title">Component History</h3>
                     <ul class="list-inline two-part">
                         <li><i class="icon-link text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/history') }}"><i class="icon ti-arrow-right"></i></a></li>
+                        <li class="text-right"><i class="icon ti-arrow-right"></i></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
+                    <a href="{{ url('/crew') }}">
                     <h3 class="box-title">Crew</h3>
                     <ul class="list-inline two-part">
                         <li><i class="icon-folder-alt text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/crew') }}"><i class="icon ti-arrow-right"></i></a></li>
+                        <li class="text-right"><i class="icon ti-arrow-right"></i></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
+                    <a href="{{ url('/downtime') }}">
                     <h3 class="box-title">Downtime</h3>
                     <ul class="list-inline two-part">
                         <li><i class="icon-link text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/downtime') }}"><i class="icon ti-arrow-right"></i></a></li>
+                        <li class="text-right"><i class="icon ti-arrow-right"></i></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
+                    <a href="{{ url('/position') }}">
                     <h3 class="box-title">Position</h3>
                     <ul class="list-inline two-part">
                         <li><i class="icon-wrench text-info"></i></li>
-                        <li class="text-right"><a href="{{ url('/position') }}"><i class="icon ti-arrow-right"></i></a></li>
+                        <li class="text-right"><i class="icon ti-arrow-right"></i></li>
                     </ul>
                 </div>
             </div>

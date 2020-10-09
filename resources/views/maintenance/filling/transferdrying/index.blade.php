@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,9 @@
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$transferdrying->id_komponen}}/detail">{{$transferdrying->id_komponen}}</a></td>
                                 <td><a href="/history/{{$transferdrying->id_komponen}}/detail">{{$transferdrying->komponen}}</a></td>
+                                <td>
+                                    <a href="/component/{{$transferdrying->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,9 @@
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$gf4->id_komponen}}/detail">{{$gf4->id_komponen}}</a></td>
                                 <td><a href="/history/{{$gf4->id_komponen}}/detail">{{$gf4->komponen}}</a></td>
+                                <td>
+                                    <a href="/component/{{$gf4->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

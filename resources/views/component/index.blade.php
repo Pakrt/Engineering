@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-8 col-xs-12">
+    <div class="col-md-6 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
@@ -43,8 +43,8 @@
                             <tr>
                                 {{-- <th scope="row"> &emsp; {{ $loop->iteration }}</th> --}}
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->id_komponen }}</a></td>
-                                <td>{{ $components->komponen }}</td>
-                                <td>{{ $components->position->nama }}</td>
+                                <td><a href="/component/{{ $components->id}}/detail">{{ $components->komponen }}</a></td>
+                                <td><a href="/component/{{ $components->id}}/detail">{{ $components->position->nama }}</a></td>
                                 {{-- <td>{{ $components->id_posisi }}</td> --}}
                                 {{-- <td class="d-inline">
                                     <form action="/component/{{ $components->id }}/delete" method="POST">

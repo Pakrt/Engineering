@@ -16,38 +16,46 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">Maintenance</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/maintenance') }}"><i class="icon-wrench text-info"></i></a></li>
-                        {{-- <li class="text-right"><a href="{{ url('/maintenance') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
-                    </ul>
+                    <a href="{{ url('/maintenance') }}">
+                        <h3 class="box-title">Maintenance</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-wrench text-info"></i></li>
+                            {{-- <li class="text-right"><a href="{{ url('/maintenance') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">Master</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/master') }}"><i class="icon-folder-alt text-info"></i></a></li>
-                        {{-- <li class="text-right"><a href="{{ url('/master') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
-                    </ul>
+                    <a href="{{ url('/master') }}">
+                        <h3 class="box-title">Master</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-folder-alt text-info"></i></li>
+                            {{-- <li class="text-right"><a href="{{ url('/master') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">Form Downtime</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/downtime/form') }}"><i class="icon-note text-info"></i></a></li>
-                        {{-- <li class="text-right"><a href="{{ url('/downtime/form') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
-                    </ul>
+                    <a href="{{ url('/downtime/form') }}">
+                        <h3 class="box-title">Form Downtime</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-note text-info"></i></li>
+                            {{-- <li class="text-right"><a href="{{ url('/downtime/form') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <h3 class="box-title">Form History</h3>
-                    <ul class="list-inline two-part">
-                        <li><a href="{{ url('/history/form') }}"><i class="icon-note text-info"></i></a></li>
-                        {{-- <li class="text-right"><a href="{{ url('/history') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
-                    </ul>
+                    <a href="{{ url('/history/form') }}">
+                        <h3 class="box-title">Form History</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-note text-info"></i></li>
+                            {{-- <li class="text-right"><a href="{{ url('/history') }}"><i class="icon ti-arrow-right"></i></a></li> --}}
+                        </ul>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-xs-12">

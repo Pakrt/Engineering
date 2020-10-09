@@ -12,4 +12,5 @@ class History extends Model
     {
         return $this->belongsTo('App\Component', 'id_komponen');
     }
+
 }

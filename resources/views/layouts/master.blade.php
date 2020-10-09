@@ -118,17 +118,23 @@
                     <li> <a href="{{ url('/maintenance') }}"><i class="mdi mdi-wrench"></i> <span class="hide-menu"> Maintenance</span></a></li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu"> Masters<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/component') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Master Component</span></a> </li>
+                            <li> <a href="{{ url('/component') }}"><i class="mdi mdi-chip"></i><span class="hide-menu"> Master Component</span></a> </li>
                             <li> <a href="{{ url('/crew')}} "><i class="mdi mdi-worker"></i><span class="hide-menu"> Master Crew</span></a> </li>
-                            <li> <a href="{{ url('/downtime')}} "><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Master Downtime</span></a> </li>
-                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master History</span></a> </li>
-                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-cube"></i><span class="hide-menu"> Master Position</span></a> </li>
+                            <li> <a href="{{ url('/downtime')}} "><i class="mdi mdi-history"></i><span class="hide-menu"> Master Downtime</span></a> </li>
+                            <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Master History</span></a> </li>
+                            <li> <a href="{{ url('/position') }}"><i class="mdi mdi-sitemap"></i><span class="hide-menu"> Master Position</span></a> </li>
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="{{ url('/history/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form History</span></a> </li>
-                            <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-minus-box-outline"></i><span class="hide-menu"> Form Downtime</span></a> </li>
+                            <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Downtime</span></a> </li>
+                        </ul>
+                    </li>
+                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span class="hide-menu">Report<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Monthly Report</span></a> </li>
+                            <li> <a href="#"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Yearly Report</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>

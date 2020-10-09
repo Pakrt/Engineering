@@ -31,9 +31,10 @@ class DowntimeController extends Controller
         //
     }
 
-    public function show(Downtime $downtime)
+    public function show($id)
     {
-        //
+        $downtime = Downtime::find($id);
+        return view('downtime.show', compact('downtime'));
     }
 
     public function edit($id)
