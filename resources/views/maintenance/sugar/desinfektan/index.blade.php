@@ -19,7 +19,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-8">
         <div class="panel">
             <div class="white-box">
                 <div class="table-responsive">
