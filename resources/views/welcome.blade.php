@@ -84,7 +84,7 @@
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center">
             <div class="col-lg-7 text-center col-sm-12 element-animate">
-              <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="inacofood.mp4" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
+              <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="assets/landing/inaco.mp4" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
               <h1 class="mb-4"><span>ENGINEER</span></h1>
               <p class="mb-5 w-75">Someone who does precision guess work based on unreliable data provided by those of questionable knowledge. <br>See also Wizard, Magiciain </p>
             </div>
@@ -96,7 +96,7 @@
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center">
             <div class="col-lg-7 text-center col-sm-12 element-animate">
-              <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="inacofood.mp4" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
+              <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="assets/landing/inaco.mp4" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
               <h1><span>An ENGINEER is</span></h1>
               <p class="mb-5 w-75">Someone who washes his hands before going to the toilet.</p>
             </div>
