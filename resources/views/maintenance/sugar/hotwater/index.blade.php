@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Komponen</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
                             <tr>
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$hotwater->id_komponen}}/detail">{{$hotwater->id_komponen}}</a></td>
+                                <td><a href="/history/{{$hotwater->id_komponen}}/detail">{{$hotwater->alias}}</a></td>
                                 <td><a href="/history/{{$hotwater->id_komponen}}/detail">{{$hotwater->komponen}}</a></td>
                                 <td>
                                     <a href="/component/{{$hotwater->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>

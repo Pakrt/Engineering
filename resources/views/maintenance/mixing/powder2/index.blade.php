@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Komponen</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
                             <tr>
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$powder2->id_komponen}}/detail">{{$powder2->id_komponen}}</a></td>
+                                <td><a href="/history/{{$powder2->id_komponen}}/detail">{{$powder2->alias}}</a></td>
                                 <td><a href="/history/{{$powder2->id_komponen}}/detail">{{$powder2->komponen}}</a></td>
                                 <td>
                                     <a href="/component/{{$powder2->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>

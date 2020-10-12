@@ -33,8 +33,9 @@
                             <tr>
                                 {{-- <th width="70" class="text-center">#</th> --}}
                                 <th>ID</th>
-                                <th>NAMA</th>
-                                <th>POSISI</th>
+                                <th>NAMA KOMPONEN</th>
+                                <th>KOMPONEN</th>
+                                <th>MESIN</th>
                                 {{-- <th>AKSI</th> --}}
                             </tr>
                         </thead>
@@ -43,6 +44,7 @@
                             <tr>
                                 {{-- <th scope="row"> &emsp; {{ $loop->iteration }}</th> --}}
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->id_komponen }}</a></td>
+                                <td><a href="/component/{{ $components->id}}/detail">{{ $components->alias }}</a></td>
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->komponen }}</a></td>
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->position->nama }}</a></td>
                                 {{-- <td>{{ $components->id_posisi }}</td> --}}
@@ -76,7 +78,11 @@
                             <input name="id_komponen" type="text" class="form-control" id="id_komponen" required>
                         </div>
                         <div class="form-group">
-                            <label for="komponen" class="control-label">Nama Komponen</label>
+                            <label for="alias" class="control-label">Nama Komponen</label>
+                            <input type="text" name="alias" class="form-control" id="alias" placeholder="Alias" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="komponen" class="control-label">Komponen</label>
                             <input type="text" name="komponen" class="form-control" id="komponen" required>
                         </div>
                         <div class="form-group">

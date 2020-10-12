@@ -25,7 +25,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="komponen">Nama Komponen</label>
+                <label for="alias">Nama Komponen</label>
+                <div>
+                    <input type="text" class="form-control" id="alias" name="alias" value="{{$component->alias}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="komponen">Komponen</label>
                 <div>
                     <input type="text" class="form-control" id="komponen" name="komponen" value="{{$component->komponen}}" required>
                 </div>

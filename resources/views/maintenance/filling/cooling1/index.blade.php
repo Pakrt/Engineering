@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('tittle') Master Component @endsection
 @section('content')
-{{-- <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -29,6 +27,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Komponen</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -37,6 +36,7 @@
                             <tr>
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$cooling1->id_komponen}}/detail">{{$cooling1->id_komponen}}</a></td>
+                                <td><a href="/history/{{$cooling1->id_komponen}}/detail">{{$cooling1->alias}}</a></td>
                                 <td><a href="/history/{{$cooling1->id_komponen}}/detail">{{$cooling1->komponen}}</a></td>
                                 <td>
                                     <a href="/component/{{$cooling1->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>

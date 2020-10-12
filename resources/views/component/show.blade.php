@@ -37,8 +37,10 @@
                         </div>
                         <div class="panel-header">
                             <h3>Nama Komponen</h3>
+                            <h4>&emsp;{{$komponen->alias}}</h4>
+                            <h3>Komponen</h3>
                             <h4>&emsp;{{$komponen->komponen}}</h4>
-                            <h3>Posisi</h3>
+                            <h3>Mesin</h3>
                             <h4>&emsp;{{$komponen->position->nama}}</h4>
                             <h3>Keterangan</h3>
                             <h4>&emsp;{{$komponen->keterangan}}</h4>

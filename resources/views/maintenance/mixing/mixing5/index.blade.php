@@ -29,6 +29,7 @@
                                 <th>No.</th>
                                 <th>ID Komponen</th>
                                 <th>Nama Komponen</th>
+                                <th>Komponen</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
                             <tr>
                                 <th scope="row">&emsp; {{ $loop->iteration}}</th>
                                 <td><a href="/history/{{$mixing5->id_komponen}}/detail">{{$mixing5->id_komponen}}</a></td>
+                                <td><a href="/history/{{$mixing5->id_komponen}}/detail">{{$mixing5->alias}}</a></td>
                                 <td><a href="/history/{{$mixing5->id_komponen}}/detail">{{$mixing5->komponen}}</a></td>
                                 <td>
                                     <a href="/component/{{$mixing5->id}}/detail" class="btn btn-success"> <i class="mdi mdi-eye"></i> </a>

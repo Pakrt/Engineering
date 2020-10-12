@@ -8,7 +8,7 @@ class Component extends Model
 {
     // public $incrementing = false;
     // protected $keyType = 'string';
-    protected $fillable = ['id_komponen', 'komponen', 'id_posisi', 'keterangan'];
+    protected $fillable = ['id_komponen', 'komponen', 'id_posisi', 'keterangan', 'alias'];
 
     public function position()
     {
