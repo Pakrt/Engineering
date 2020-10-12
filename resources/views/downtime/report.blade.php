@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle') Weekly Report @endsection
+@section('tittle') Downtime Report @endsection
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -79,6 +79,7 @@
     <div class="col-md-12 col-xs-12">
         <div class="white-box col-md-4">
             <h2>Gambar Grafik</h2>
+            <h1 style="text-align: center; font-family: Lucida">SOON !!</h1>
         </div>
         <div class="col-md-1 box">
 

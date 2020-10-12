@@ -61,7 +61,9 @@ class CrewController extends Controller
     public function destroy($id)
     {
         $crew = Crew::find($id);
+        $user = User::find($crew->user_id);
         $crew->delete();
+        $user->delete();
         return redirect('/crew')->with('status', 'Data berhasil dihapus !!');
     }
 }

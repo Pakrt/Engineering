@@ -131,12 +131,12 @@
                             <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Downtime</span></a> </li>
                         </ul>
                     </li>
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span class="hide-menu">Report<span class="fa arrow"></span></span></a>
+                    {{-- <li> <a href="#" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span class="hide-menu">Report<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="#"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Monthly Report</span></a> </li>
                             <li> <a href="#"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Yearly Report</span></a> </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="devider"></li>
                 </ul>
             </div>

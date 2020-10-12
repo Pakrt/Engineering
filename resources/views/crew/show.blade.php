@@ -35,7 +35,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
-<div class="col-md-6 col-sm-12 col-lg-6">
+<div class="col-md-8 col-sm-12 col-lg-8">
     <div class="panel">
         <div class="p-30">
             <div class="row">

@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
     Route::get('/crew/{id}/detail', 'CrewController@show');
     Route::get('/crew/{id}/edit', 'CrewController@edit');
     Route::post('/crew/{id}/update', 'CrewController@update');
+    Route::delete('/crew/{id}/delete', 'CrewController@destroy');
 
     Route::get('/maintenance', function () {
         return view('maintenance.index');

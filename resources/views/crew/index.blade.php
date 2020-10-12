@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-8 col-xs-12">
+    <div class="col-md-6 col-xs-12">
         <div class="panel">
             @if (auth()->user()->role == 'Admin')
             <div class="panel-heading">
@@ -36,6 +36,9 @@
                                 <th width="70" class="text-center">#</th>
                                 <th>Nama</th>
                                 <th>Scope</th>
+                                @if (auth()->user()->role == 'Admin')
+                                <th>Aksi</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -43,15 +46,17 @@
                             <tr>
                                 <th scope="row"> &emsp; {{ $loop->iteration }}</th>
                                 <td><a href="/crew/{{ $crew->id }}/detail"><?=$crew->nama; ?></a></td>
-                                <td><?=$crew->scope; ?> Engineer</td>
-                                {{-- <td>
-                                    <form action="/position/{{ $user->id }}/delete" method="POST">
+                                <td><a href="/crew/{{ $crew->id }}/detail"><?=$crew->scope; ?> Engineer</a></td>
+                                @if (auth()->user()->role == 'Admin')
+                                <td>
+                                    <form action="/crew/{{ $crew->id }}/delete" method="POST">
                                         @method('delete')
                                         @csrf
-                                        <a href="/position/{{ $user->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a>
+                                        {{-- <a href="/crew/{{ $user->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a> --}}
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5 d-inline" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
-                                </td> --}}
+                                </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>
