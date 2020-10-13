@@ -21,6 +21,29 @@
 <div class="row">
     <div class="col-sm-12 col-md-8">
         <div class="panel">
+            <button class="btn btn-info" title="PID" type="button" onclick="
+            if(document.getElementById('spoiler') .style.display=='none')
+                {document.getElementById('spoiler') .style.display=''
+            }
+            else{document.getElementById('spoiler') .style.display='none'
+            }">
+            PID 1
+            </button>
+            <button class="btn btn-info" title="PID2" type="button" onclick="
+            if(document.getElementById('spoiler2') .style.display=='none')
+                {document.getElementById('spoiler2') .style.display=''
+            }
+            else{document.getElementById('spoiler2') .style.display='none'
+            }">
+            PID 2
+            </button>
+
+            <div id="spoiler" style="display:none">
+                <img src="/assets/pid/401(1).jpg" width="100%" height="100%"">
+            </div>
+            <div id="spoiler2" style="display:none">
+                <img src="/assets/pid/401(2).jpg" width="100%" height="100%"">
+            </div>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="myTable" class="table table-striped">
@@ -53,19 +76,6 @@
         </div>
     </div>
 </div>
-
-<!-- jQuery -->
-<script src="/assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Menu Plugin JavaScript -->
-<script src="/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-<!--slimscroll JavaScript -->
-<script src="/assets/js/jquery.slimscroll.js"></script>
-<!--Wave Effects -->
-<script src="/assets/js/waves.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="/assets/js/custom.min.js"></script>
 
 
 @endsection
