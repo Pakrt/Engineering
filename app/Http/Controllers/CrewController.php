@@ -15,6 +15,10 @@ class CrewController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'unique:users',
+            'kontak' => 'unique:crews'
+        ]);
         $user = new \App\User;
         $user->role = $request->role;
         $user->name = $request->nama;

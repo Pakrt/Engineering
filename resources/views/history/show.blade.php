@@ -32,6 +32,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>ID Komponen</th>
+                                <th>Nama Komponen</th>
                                 <th>Dibuat tanggal</th>
                                 <th>PIC</th>
                                 <th>Keterangan</th>
@@ -44,6 +45,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td><a href="/history/{{$history->id}}/rinci">{{ $history->id_komponen }}</a></td>
+                                <td><a href="/history/{{$history->id}}/rinci">{{ $history->component->alias }}</a></td>
                                 <td>{{ $history->tanggal }}</td>
                                 <td>{{ $history->user }}</td>
                                 <td>{{ $history->keterangan }}</td>

@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
@@ -68,13 +68,16 @@
                 <div class="modal-body">
                     <form action="/position/create" method="POST">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group{{$errors->has('id') ? 'has-error' : ''}}">
                             <label for="id_posisi" class="control-label">ID Posisi:</label>
-                            <input name="id" type="text" class="form-control" id="id_posisi">
+                            <input name="id" type="text" class="form-control" id="id_posisi" value="{{old('id')}}" required>
+                            @if($errors->has('id'))
+                                <span class="help-block">{{$errors->first('id')}}</span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="nama" class="control-label">Nama Posisi</label>
-                            <input type="text" name="nama" class="form-control" id="nama">
+                            <input type="text" name="nama" class="form-control" id="nama" required>
                         </div>
                     </div>
                     <div class="modal-footer">

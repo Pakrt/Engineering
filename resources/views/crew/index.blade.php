@@ -117,14 +117,20 @@
                                 <option value="Bencong">Lain-lain</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group{{$errors->has('email') ? 'has-error' : ''}}">
                             <label for="email" class="control-label">Email</label>
-                            <input name="email" type="email" class="form-control" id="email" placeholder="@" required>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="@" value="{{old('email')}}" required>
+                            @if ($errors->has('email'))
+                                <span class="help-block">{{$errors->first('email')}}</span>
+                            @endif
                         </div>
-                        <div class="form-group">
+                        <div class="form-group{{$errors->has('kontak') ? 'has-error' : ''}}">
                             <label for="kontak" class="control-label">No. HP/Whatsapp</label>
                             <span class="help-block"><small>Tambahkan kode negara (62)</small></span>
                             <input name="kontak" type="text" class="form-control" id="kontak" required value="62">
+                            @if ($errors->has('email'))
+                                <span class="help-block">{{$errors->first('kontak')}}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="modal-footer">

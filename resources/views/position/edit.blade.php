@@ -19,7 +19,7 @@
             @csrf
             <div class="form-group">
                 <label for="id_posisi" class="control-label">ID Posisi:</label>
-                <input name="id" type="text" class="form-control" id="id_posisi" value="{{$position->id}}" required>
+                <input name="id" type="text" class="form-control" id="id_posisi" value="{{$position->id}}" readonly>
             </div>
             <div class="form-group">
                 <label for="nama" class="control-label">Nama Posisi</label>

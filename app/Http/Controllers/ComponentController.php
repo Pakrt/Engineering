@@ -6,6 +6,7 @@ use App\Position;
 use App\Component;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use phpDocumentor\Reflection\Types\This;
 
 use function GuzzleHttp\Promise\all;
 
@@ -20,6 +21,9 @@ class ComponentController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'id_komponen' => 'unique:components'
+        ]);
         Component::create($request->all());
         return redirect('/component')->with('status', 'Data berhasil ditambahkan');
     }

@@ -34,6 +34,7 @@
                     <div class="panel-wrapper collapse in">
                         <div class="panel-header">
                             <h2>{{$history->id_komponen}}</h2>
+                            <h2>{{$history->component->alias}}</h2>
                         </div>
                         <div class="panel-body">
                             <h3>Keterangan</h3>

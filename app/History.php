@@ -10,7 +10,7 @@ class History extends Model
 
     public function component()
     {
-        return $this->belongsTo('App\Component', 'id_komponen');
+        return $this->belongsTo('App\Component', 'id_komponen', 'id_komponen');
     }
 
 }

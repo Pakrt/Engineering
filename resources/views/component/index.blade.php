@@ -73,9 +73,12 @@
                 <div class="modal-body">
                     <form action="/component/create" method="POST">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group{{$errors->has('id_komponen') ? 'has-error' : ''}}">
                             <label for="id_komponen" class="control-label">ID Komponen</label>
-                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" required>
+                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" value="{{old('id_komponen')}}" required>
+                            @if($errors->has('id_komponen'))
+                                <span class="help-block">{{$errors->first('id_komponen')}}</span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="alias" class="control-label">Nama Komponen</label>

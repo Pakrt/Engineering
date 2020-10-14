@@ -17,6 +17,6 @@ class Component extends Model
 
     public function history()
     {
-        return $this->hasMany('App\History', 'id_komponen');
+        return $this->hasMany('App\History', 'id_komponen', 'id_komponen');
     }
 }

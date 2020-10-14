@@ -20,7 +20,10 @@ class PositionController extends Controller
         // $position->nama = $request->nama;
         // $position->save();
         // Position::create($request->all());
-        \App\Position::create($request->all());
+        $this->validate($request, [
+            'id' => 'unique:positions'
+        ]);
+        Position::create($request->all());
 
         return redirect('/position')->with('status', 'Data Berhasil ditambahkan !!');
     }
@@ -37,14 +40,14 @@ class PositionController extends Controller
 
     public function edit($id)
     {
-        $position = \App\Position::find($id);
+        $position = Position::find($id);
         return view('position.edit', ['position' => $position]);
 
     }
 
     public function update(Request $request, $id)
     {
-        $position = \App\Position::find($id);
+        $position = Position::find($id);
         $position->update($request->all());
 
         return redirect('/position')->with('status', 'Data Berhasil di update !!');
@@ -52,7 +55,7 @@ class PositionController extends Controller
 
     public function destroy($id)
     {
-        $position = \App\Position::find($id);
+        $position = Position::find($id);
         $position->delete();
 
         return redirect('/position')->with('status', 'Data Berhasil dihapus !!');
