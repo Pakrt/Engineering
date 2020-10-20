@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Unit extends Model
+class Category extends Model
 {
-    protected $fillable = ['kode', 'nama', 'spare'];
+    protected $fillable = ['kode', 'nama', 'keterangan', 'spare'];
 
-    public function sparepart()
+    public function sparepart ()
     {
         return $this->hasMany('App/Sparepart');
     }

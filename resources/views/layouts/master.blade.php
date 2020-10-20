@@ -14,6 +14,13 @@
     <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="/assets/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
     <!-- Menu CSS -->
     <link href="/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- animation CSS -->
@@ -39,34 +46,46 @@
                     <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
 
                 </ul>
+                <?php
+                    $alert = \DB::select('select * from spareparts where jumlah < minimum');
+                    $total = count($alert) > 0;
+                ?>
                 <ul class="nav navbar-top-links navbar-right pull-right">
+                    @if(auth()->user()->role == 'Admin')
                     <!-- .Task dropdown -->
-                    {{-- <li class="dropdown">
-                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-check-circle"></i>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-alert-circle-outline"></i>
+                            @if($total)
                             <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                            @endif
                         </a>
                         <ul class="dropdown-menu dropdown-tasks animated slideInUp">
+                            @if($total)
+                            <li class="header text-center">
+                                <h4 style="font-family: Lucida">Sparepart Attention</h4>
+                            </li>
+                            @foreach ($alert as $alert)
                             <li>
-                                <a href="#">
-                                    <div>
-                                        <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
-                                        </div>
-                                    </div>
+                                <a href="/sparepart/{{$alert->id}}/detail">
+                                    <i class="fas fa-alert"></i>{{$alert->nama}}
                                 </a>
                             </li>
+                            @endforeach
                             <li class="divider"></li>
                             <li>
-                                <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
+                                <a class="text-center" href="/sparepart/alert"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
                             </li>
+                            @else
+                            <li class="header text-center">
+                                <h4 style="font-family: Lucida">Sparepart Attention</h4>
+                            </li>
+                            <li>
+                                <a class="text-center" href="javascript:void(0);"> <strong>Stok Sparepart Amaann ^_^</strong></a>
+                            </li>
+                            @endif
                         </ul>
                     </li>
-                    <li>
-                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
-                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
-                        </form>
-                    </li> --}}
+                    @endif
                     <li class="dropdown">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
                             <img src="{{ Auth::user()->getAvatar() }}" alt="user-img" style="vertical-align:middle; width:50px; height:50px; border-radius:50%">
@@ -118,19 +137,34 @@
                     <li> <a href="{{ url('/maintenance') }}"><i class="mdi mdi-wrench"></i> <span class="hide-menu"> Maintenance</span></a></li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu"> Masters<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
+                            @if (auth()->user()->role == 'Admin')
+                            <li> <a href="{{ url('/category') }}"><i class="mdi mdi-archive"></i><span class="hide-menu"> Master Category</span></a> </li>
+                            @endif
                             <li> <a href="{{ url('/component') }}"><i class="mdi mdi-chip"></i><span class="hide-menu"> Master Component</span></a> </li>
                             <li> <a href="{{ url('/crew')}} "><i class="mdi mdi-worker"></i><span class="hide-menu"> Master Crew</span></a> </li>
                             <li> <a href="{{ url('/downtime')}} "><i class="mdi mdi-history"></i><span class="hide-menu"> Master Downtime</span></a> </li>
                             <li> <a href="{{ url('/history') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Master History</span></a> </li>
                             <li> <a href="{{ url('/position') }}"><i class="mdi mdi-sitemap"></i><span class="hide-menu"> Master Position</span></a> </li>
+                            @if (auth()->user()->role == 'Admin')
+                            <li> <a href="{{ url('/sparepart') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Master Sparepart</span></a> </li>
+                            <li> <a href="{{ url('/unit') }}"><i class="mdi mdi-database"></i><span class="hide-menu"> Master Unit</span></a> </li>
+                            @endif
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i> <span class="hide-menu">Transaction<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{ url('/history/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form History</span></a> </li>
+                            @if (auth()->user()->role == 'Admin')
+                            <li> <a href="{{ url('/outcome/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Barang Keluar</span></a> </li>
+                            <li> <a href="{{ url('/income/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Barang Masuk</span></a> </li>
+                            @endif
                             <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Downtime</span></a> </li>
+                            <li> <a href="{{ url('/history/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form History</span></a> </li>
                         </ul>
                     </li>
+                    @if (auth()->user()->role == 'Admin')
+                    <li> <a href="{{ url('/outcome') }}"><i class="mdi mdi-package-up"></i> <span class="hide-menu"> Data Barang Keluar</span></a></li>
+                    <li> <a href="{{ url('/income') }}"><i class="mdi mdi-package-down"></i> <span class="hide-menu"> Data Barang Masuk</span></a></li>
+                    @endif
                     {{-- <li> <a href="#" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span class="hide-menu">Report<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="#"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Monthly Report</span></a> </li>
@@ -196,14 +230,18 @@
     <script src="/assets/js/custom.min.js"></script>
 
     <script src="/assets/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
-<!-- start - This is for export functionality only -->
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="/assets/plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
+    <script src="/assets/plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="/assets/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="/assets/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
 
 <script>
     $(document).ready(function () {
@@ -252,6 +290,55 @@
         'copy', 'csv', 'excel', 'pdf', 'print'
     ]
     });
+
+    // Untuk Select Advance
+    jQuery(document).ready(function () {
+        // Switchery
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $('.js-switch').each(function () {
+            new Switchery($(this)[0], $(this).data());
+        });
+        // For select 2
+        $(".select2").select2();
+        $('.selectpicker').selectpicker();
+        //Bootstrap-TouchSpin
+        $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+            , verticalupclass: 'ti-plus'
+            , verticaldownclass: 'ti-minus'
+        });
+        var vspinTrue = $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+        });
+        if (vspinTrue) {
+            $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+        }
+        $("input[name='tch1']").TouchSpin({
+            min: 0
+            , max: 100
+            , step: 0.1
+            , decimals: 2
+            , boostat: 5
+            , maxboostedstep: 10
+            , postfix: '%'
+        });
+        $("input[name='tch2']").TouchSpin({
+            min: -1000000000
+            , max: 1000000000
+            , stepinterval: 50
+            , maxboostedstep: 10000000
+            , prefix: '$'
+        });
+        $("input[name='tch3']").TouchSpin();
+        $("input[name='tch3_22']").TouchSpin({
+            initval: 40
+        });
+        $("input[name='tch5']").TouchSpin({
+            prefix: "pre"
+            , postfix: "post"
+        });
+    });
+
 </script>
     <!--Style Switcher -->
     <script src="/assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>

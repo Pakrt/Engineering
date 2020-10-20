@@ -13,15 +13,48 @@ Route::get('/master', 'HomeController@master')->name('master');
 
 Auth::routes();
 Route::group(['middleware' => ['auth','checkRole:Admin']], function () {
+
+    Route::get('/category', 'CategoryController@index');
+    Route::post('/category/create', 'CategoryController@create');
+    Route::get('/category/{id}/edit', 'CategoryController@edit');
+    Route::post('/category/{id}/update', 'CategoryController@update');
+    Route::delete('/category/{id}/delete', 'CategoryController@destroy');
+
+    Route::get('/unit', 'UnitController@index');
+    Route::post('/unit/create', 'UnitController@create');
+    Route::get('/unit/{id}/edit', 'UnitController@edit');
+    Route::post('/unit/{id}/update', 'UnitController@update');
+    Route::delete('/unit/{id}/delete', 'UnitController@destroy');
+
+    // Master Sparepart
+    Route::get('/sparepart', 'SparepartController@index');
+    Route::get('/sparepart/form', 'SparepartController@form');
+    Route::post('/sparepart/create', 'SparepartController@create');
+    Route::get('/sparepart/{id}/detail', 'SparepartController@show');
+    Route::get('/sparepart/{id}/edit', 'SparepartController@edit');
+    Route::post('/sparepart/{id}/update', 'SparepartController@update');
+    Route::delete('/sparepart/{id}/delete', 'SparepartController@destroy');
+    Route::get('/sparepart/alert', 'SparepartController@alert');
+
+    Route::get('/income', 'IncomeController@index');
+    Route::get('/income/form', 'IncomeController@form');
+    Route::post('/income/create', 'IncomeController@create');
+    Route::delete('/income/{id}/delete', 'IncomeController@destroy');
+
+    Route::get('/outcome', 'OutcomeController@index');
+    Route::get('/outcome/form', 'OutcomeController@form');
+    Route::post('/outcome/create', 'OutcomeController@create');
+    Route::delete('/outcome/{id}/delete', 'OutcomeController@destroy');
+});
+
+Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
+
     // Master Position
     Route::get('/position', 'PositionController@index');
     Route::post('/position/create', 'PositionController@create');
     Route::get('/position/{id}/edit', 'PositionController@edit');
     Route::post('/position/{id}/update', 'PositionController@update');
     Route::delete('/position/{id}/delete', 'PositionController@destroy');
-});
-
-Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
 
     Route::get('/user', 'UserController@index');
     Route::get('/user/{id}/detail', 'UserController@show');

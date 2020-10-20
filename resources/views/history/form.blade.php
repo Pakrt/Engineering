@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="btn btn-info btn-xs"><a href="{{ url('/home')}}">Dashboard</a></li>
             <li class="btn btn-info btn-xs"><a href="{{ url('/history')}}">Master History</a></li>
-            <li class="active"><a href="#">Form History</a></li>
+            <li class="active">Form History</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->

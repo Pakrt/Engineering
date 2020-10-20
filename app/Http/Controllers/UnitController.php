@@ -7,79 +7,45 @@ use Illuminate\Http\Request;
 
 class UnitController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $unit = Unit::all();
+        return view('unit.index', compact('unit'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $this->validate($request, [
+            'kode' => 'unique:categories'
+        ]);
+        Unit::create($request->all());
+        return redirect('/unit')->with('status', 'Data berhasil ditambahkan');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Unit  $unit
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Unit $unit)
+    public function show(unit $unit)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Unit  $unit
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Unit $unit)
+    public function edit($id)
     {
-        //
+        $unit = Unit::find($id);
+        return view('unit.edit', compact('unit'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Unit  $unit
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Unit $unit)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'kode' => 'unique:categories'
+        ]);
+        $unit = Unit::find($id);
+        $unit->update($request->all());
+        return redirect('/unit')->with('status', 'Data berhasil di update !!');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Unit  $unit
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Unit $unit)
+    public function destroy($id)
     {
-        //
+        $unit = Unit::find($id);
+        $unit->delete();
+        return redirect('/unit');
     }
 }

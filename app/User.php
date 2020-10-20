@@ -49,4 +49,14 @@ class User extends Authenticatable
         }
         return asset('images/'. $this->avatar);
     }
+
+    public function income()
+    {
+        return $this->hasMany('App/Income');
+    }
+
+    public function outcome()
+    {
+        return $this->hasMany('App/Outcome');
+    }
 }

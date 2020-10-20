@@ -38,7 +38,6 @@ class CrewController extends Controller
 
     public function show($id)
     {
-        // $crew = User::find($id)->crew;
         $crew = Crew::find($id);
         return view('crew.show', compact('crew'));
     }
