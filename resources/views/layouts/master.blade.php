@@ -29,6 +29,7 @@
     <link href="/assets/css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="/assets/css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    {{-- <link href="/assets/css/colors/pink.css" id="theme" rel="stylesheet"> --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,7 +45,6 @@
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left">
                     <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
-
                 </ul>
                 <?php
                     $alert = \DB::select('select * from spareparts where jumlah < minimum');
@@ -211,6 +211,7 @@
             </div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2020 &copy; Saya Menggunakan Ample Admin by themedesigner.in </footer>
+            {{-- <footer class="footer text-center" style="background-color: #ebc8b2; color: #000000"> 2020 &copy; Saya Menggunakan Ample Admin by themedesigner.in </footer> --}}
         </div>
         <!-- End Page Content -->
         <!-- ============================================================== -->

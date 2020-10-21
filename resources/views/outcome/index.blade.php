@@ -33,19 +33,19 @@
                                 <th>Tanggal</th>
                                 <th>Sparepart</th>
                                 <th>Jumlah</th>
+                                <th>Satuan</th>
                                 <th>Keterangan</th>
-                                <th>User</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($outcome as $outcome)
                             <tr>
-                                <td><a href="#">{{ $outcome->tanggal }}</a></td>
-                                <td><a href="#">{{ $outcome->sparepart->nama }}</a></td>
-                                <td><a href="#">{{ $outcome->jumlah }}</a></td>
-                                <td><a href="#">{{ $outcome->keterangan }}</a></td>
-                                <td><a href="#">{{ $outcome->user->name }}</a></td>
+                                <td>{{ $outcome->tanggal }}</td>
+                                <td>{{ $outcome->sparepart->nama }}</td>
+                                <td>{{ $outcome->jumlah }}</td>
+                                <td>{{ $outcome->sparepart->unit->kode }}</td>
+                                <td>{{ $outcome->keterangan }}</td>
                                 <td>
                                     <form action="/outcome/{{$outcome->id}}/delete" method="POST">
                                         @method('delete')

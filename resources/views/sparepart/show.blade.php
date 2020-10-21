@@ -1,4 +1,25 @@
 @extends('layouts.master')
+<style>
+    .col-md-8 .btn {
+        position: absolute;
+    top: 90%;
+    left: ;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    }
+
+    .col-md-4 .btn:hover{
+        background-color: rgb(103, 155, 253);
+    }
+</style>
 @section('tittle') Master Sparepart @endsection
 @section('content')
 <div class="row bg-title">
@@ -18,10 +39,16 @@
 <div class="row">
     <div class="col-md-6 col-xs-12">
         <div class="white-box">
-            <div class="user-bg text-center">
-                <a href="/images/nouser.jpg" target="_blank">
-                    <img width="auto" height="auto" alt="sparepart" src="/images/nouser.jpg">
+            <div class="row">
+                <div class="col-md-8 col-xs-12"></div>
+                <a href="{{ $sparepart->getGambar() }}" target="_blank">
+                    <img style=" width:300px; height:300px; border-radius:5%" alt="sparepart" src="{{ $sparepart->getGambar() }}">
                 </a>
+                <div class="col-md-4">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </div>
             </div>
             <div class="user-btm-box">
                 <div class="row text-center m-t-10">

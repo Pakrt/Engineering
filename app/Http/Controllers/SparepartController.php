@@ -19,6 +19,12 @@ class SparepartController extends Controller
     public function create( Request $request)
     {
         $sparepart = Sparepart::create($request->all());
+        if($request->hasFile('gambar'))
+        {
+            $request->file('gambar')->move('images/',$request->file('gambar')->getClientOriginalName());
+            $sparepart->gambar = $request->file('gambar')->getClientOriginalName();
+            $sparepart->save();
+        }
         return redirect('/sparepart')->with('status', 'Data berhasil ditambahkan !!');
     }
 
@@ -44,7 +50,12 @@ class SparepartController extends Controller
     {
         $sparepart = Sparepart::find($id);
         $sparepart->update($request->all());
-
+        if($request->hasFile('gambar'))
+        {
+            $request->file('gambar')->move('images/',$request->file('gambar')->getClientOriginalName());
+            $sparepart->gambar = $request->file('gambar')->getClientOriginalName();
+            $sparepart->save();
+        }
         return redirect('/sparepart')->with('status', 'Data berhasil di update !!');
     }
 

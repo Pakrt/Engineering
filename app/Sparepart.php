@@ -27,4 +27,12 @@ class Sparepart extends Model
     {
         return $this->belongsTo('App\Unit');
     }
+
+    public function getGambar()
+    {
+        if(!$this->gambar){
+            return asset('images/noimg.jpg');
+        }
+        return asset('images/'. $this->gambar);
+    }
 }

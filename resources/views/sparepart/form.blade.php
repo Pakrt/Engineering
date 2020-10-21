@@ -17,7 +17,7 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <form method="POST" action="/sparepart/create">
+        <form method="POST" action="/sparepart/create" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="control-label">Kategori</label>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="spesifikasi" class="control-label">Spesifikasi</label>
-                <textarea name="spesifikasi" class="form-control" id="spesifikasi" required></textarea>
+                <textarea name="spesifikasi" class="form-control" id="spesifikasi"></textarea>
             </div>
             <div class="form-group">
                 <label for="minimum" class="control-label">Minimal Stok</label>
@@ -54,6 +54,10 @@
             <div class="form-group" hidden>
                 <label for="jumlah" class="control-label">Jumlah</label>
                 <input type="number" name="jumlah" class="form-control" id="jumlah" value="0">
+            </div>
+            <div class="form-group">
+                <label for="gambar" class="control-label">Gambar</label>
+                <input name="gambar" type="file" class="form-control" id="gambar">
             </div>
             <div class="modal-footer">
                 <a href="{{ url('/sparepart') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
