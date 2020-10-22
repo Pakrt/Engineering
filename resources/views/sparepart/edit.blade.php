@@ -26,6 +26,7 @@
                     <option value="{{ $category->id }}">{{ $category->kode }} - {{ $category->nama }}</option>
                     @endforeach
                 </select>
+                <small>&nbsp;{{ $sparepart->category->kode }} - {{ $sparepart->category->nama }}</small>
             </div>
             <div class="form-group">
                 <label for="nama" class="control-label">Nama Sparepart</label>
@@ -46,6 +47,7 @@
                     <option value="{{ $units->id }}">{{ $units->kode }} - {{ $units->nama }}</option>
                     @endforeach
                 </select>
+                <small>&nbsp;{{ $sparepart->unit->kode }} - {{ $sparepart->unit->nama }}</small>
             </div>
             <div class="form-group">
                 <label for="keterangan" class="control-label">Keterangan</label>

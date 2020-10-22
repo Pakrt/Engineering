@@ -74,8 +74,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="id_komponen" class="control-label">ID Komponen</label>
-                            <input name="id_komponen" type="text" class="form-control" id="id_komponen" required>
-                        </div>
+                            <select class="form-control select2" name="id_komponen" required>
+                                @foreach ($component as $component)
+                                <option value="{{ $component->id_komponen }}">{{ $component->id_komponen }} - {{ $component->komponen }}</option>
+                                @endforeach
+                            </select>                        </div>
                         <div class="form-group">
                             <label for="tanggal" class="control-label">Tanggal</label>
                             <input type="date" name="tanggal" class="form-control" id="tanggal" required>

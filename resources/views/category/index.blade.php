@@ -27,13 +27,13 @@
             </div>
             @endif
             <div class="white-box">
+                <div class="table-responsive m-t-5">
                     <table id="myTable" class="table table-striped">
                         <thead>
                             <tr>
                                 <th width="50" class="text-center">#</th>
                                 <th>KODE</th>
                                 <th>NAMA</th>
-                                <th>KETERANGAN</th>
                                 <th width="80">AKSI</th>
                             </tr>
                         </thead>
@@ -43,7 +43,6 @@
                                 <th scope="row"> &emsp; {{ $loop->iteration }}</th>
                                 <td>{{$category->kode}}</td>
                                 <td>{{$category->nama}}</td>
-                                <td>{{$category->keterangan}}</td>
                                 <td>
                                     <form action="/category/{{ $category->id }}/delete" method="POST">
                                         @method('delete')
@@ -56,6 +55,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
             </div>
         </div>
     </div>

@@ -27,6 +27,7 @@
             </div>
             @endif
             <div class="white-box">
+                <div class="table-responsive m-t-5">
                     <table id="myTable" class="table table-striped">
                         <thead>
                             <tr>
@@ -54,6 +55,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
             </div>
         </div>
     </div>

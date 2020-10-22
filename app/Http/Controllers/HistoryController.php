@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Component;
 use App\History;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class HistoryController extends Controller
     public function index()
     {
         $history = History::all();
-        return view('history.index', compact('history'));
+        $component = Component::all();
+        return view('history.index', compact('history', 'component'));
     }
 
     public function create(Request $request)
@@ -60,6 +62,7 @@ class HistoryController extends Controller
 
     public function form()
     {
-        return view('history.form');
+        $component = Component::all();
+        return view('history.form', compact('component'));
     }
 }
