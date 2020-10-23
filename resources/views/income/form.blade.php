@@ -18,6 +18,10 @@
         <form method="POST" action="/income/create">
             @csrf
             <div class="form-group">
+                <label for="kode" class="control-label">Kode LBM</label>
+                <input type="text" name="kode" class="form-control" id="kode" required>
+            </div>
+            <div class="form-group">
                 <label class="control-label">Nama Sparepart</label>
                 <select class="form-control select2" name="sparepart_id" required>
                     @foreach ($sparepart as $sparepart)

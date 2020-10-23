@@ -14,7 +14,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-12 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
                 <a href="/outcome/form" class="btn btn-info btn-outline">Tambah Data</a>
@@ -31,6 +31,7 @@
                         <thead>
                             <tr>
                                 <th>Tanggal</th>
+                                <th>Kode LBK</th>
                                 <th>Sparepart</th>
                                 <th>Jumlah</th>
                                 <th>Satuan</th>
@@ -42,6 +43,7 @@
                             @foreach ($outcome as $outcome)
                             <tr>
                                 <td>{{ $outcome->tanggal }}</td>
+                                <td>{{ $outcome->kode }}</td>
                                 <td>{{ $outcome->sparepart->nama }}</td>
                                 <td>{{ $outcome->jumlah }}</td>
                                 <td>{{ $outcome->sparepart->unit->kode }}</td>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Outcome extends Model
 {
-    protected $fillable = ['sparepart_id', 'jumlah', 'tanggal', 'user_id', 'keterangan', 'spare', 'spares'];
+    protected $fillable = ['sparepart_id', 'jumlah', 'tanggal', 'user_id', 'keterangan', 'kode', 'spares'];
 
     public function sparepart()
     {
