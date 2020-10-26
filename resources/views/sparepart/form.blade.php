@@ -35,11 +35,11 @@
                 <label for="spesifikasi" class="control-label">Spesifikasi</label>
                 <textarea name="spesifikasi" class="form-control" id="spesifikasi"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="minimum" class="control-label">Minimal Stok</label>
                 <input type="number" name="minimum" class="form-control" id="minimum">
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label class="control-label">Satuan</label>
                 <select class="form-control select2" name="unit_id" required>
                     @foreach ($units as $units)
@@ -47,7 +47,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-8">
                 <label for="keterangan" class="control-label">Keterangan</label>
                 <textarea class="form-control" name="keterangan" id="keterangan"></textarea>
             </div>
@@ -55,11 +55,11 @@
                 <label for="jumlah" class="control-label">Jumlah</label>
                 <input type="number" name="jumlah" class="form-control" id="jumlah" value="0">
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label for="gambar" class="control-label">Gambar</label>
                 <input name="gambar" type="file" class="form-control" id="gambar">
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer col-md-12">
                 <a href="{{ url('/sparepart') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
                 <button type="submit" class="btn btn-success" onclick="return confirm('Apakah anda ingin menyimpan data ini ??')">Simpan</button>
             </div>

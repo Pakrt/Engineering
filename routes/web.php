@@ -40,11 +40,15 @@ Route::group(['middleware' => ['auth','checkRole:Admin']], function () {
     Route::get('/income/form', 'IncomeController@form');
     Route::post('/income/create', 'IncomeController@create');
     Route::delete('/income/{id}/delete', 'IncomeController@destroy');
+    Route::get('/income/{id}/edit', 'IncomeController@edit');
+    Route::post('/income/{id}/update', 'IncomeController@update');
 
     Route::get('/outcome', 'OutcomeController@index');
     Route::get('/outcome/form', 'OutcomeController@form');
     Route::post('/outcome/create', 'OutcomeController@create');
     Route::delete('/outcome/{id}/delete', 'OutcomeController@destroy');
+    Route::get('/outcome/{id}/edit', 'OutcomeController@edit');
+    Route::post('/outcome/{id}/update', 'OutcomeController@update');
 });
 
 Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {

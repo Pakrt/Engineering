@@ -44,7 +44,7 @@
                             <tr>
                                 <td>{{ $income->tanggal }}</td>
                                 <td>{{ $income->kode }}</td>
-                                <td>{{ $income->sparepart->nama }}</td>
+                                <td><a href="/sparepart/{{$income->sparepart->id}}/detail">{{ $income->sparepart->nama }}</a></td>
                                 <td>{{ $income->jumlah }}</td>
                                 <td>{{ $income->sparepart->unit->kode }}</td>
                                 <td>{{ $income->keterangan }}</td>
@@ -52,6 +52,7 @@
                                     <form action="/income/{{$income->id}}/delete" method="POST">
                                         @method('delete')
                                         @csrf
+                                        <a href="/income/{{ $income->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a>
                                         <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5 d-inline" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
                                     </form>
                                 </td>

@@ -22,7 +22,7 @@ class OutcomeController extends Controller
         $outcome->jumlah -= $request->jumlah;
         $outcome->save();
 
-        return redirect('/outcome')->with('status', 'Data berhasil Ditambahkan');
+        return redirect('/outcome')->with('status', 'Data berhasil ditambahkan !!');
     }
 
     public function form()
@@ -36,14 +36,17 @@ class OutcomeController extends Controller
         //
     }
 
-    public function edit(outcome $outcome)
+    public function edit($id)
     {
-        //
+        $outcome = Outcome::find($id);
+        return view('outcome.edit', compact('outcome'));
     }
 
-    public function update(Request $request, outcome $outcome)
+    public function update(Request $request, $id)
     {
-        //
+        $outcome = Outcome::find($id);
+        $outcome->update($request->all());
+        return redirect('/outcome')->with('status', 'Data berhasil di update !!');
     }
 
     public function destroy($id)

@@ -75,6 +75,26 @@
                     </a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <div class="white-box">
+                    <a href="{{ url('/outcome') }}">
+                        <h3 class="box-title">Data Barang Keluar</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-folder-alt text-info"></i></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <div class="white-box">
+                    <a href="{{ url('/income') }}">
+                        <h3 class="box-title">Data Barang Masuk</h3>
+                        <ul class="list-inline two-part">
+                            <li><i class="icon-folder-alt text-info"></i></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
             @endif
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="white-box">

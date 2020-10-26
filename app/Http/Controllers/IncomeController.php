@@ -22,7 +22,7 @@ class IncomeController extends Controller
         $income->jumlah += $request->jumlah;
         $income->save();
 
-        return redirect('/income')->with('status', 'Data berhasil Ditambahkan');
+        return redirect('/income')->with('status', 'Data berhasil ditambahkan !!');
     }
 
     public function form()
@@ -36,14 +36,17 @@ class IncomeController extends Controller
         //
     }
 
-    public function edit(Income $income)
+    public function edit($id)
     {
-        //
+        $income = Income::find($id);
+        return view('income.edit', compact('income'));
     }
 
-    public function update(Request $request, Income $income)
+    public function update(Request $request, $id)
     {
-        //
+        $income = Income::find($id);
+        $income->update($request->all());
+        return redirect('/income')->with('status', 'Data berhasil di update !!');
     }
 
     public function destroy($id)
