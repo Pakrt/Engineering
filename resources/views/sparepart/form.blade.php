@@ -8,9 +8,8 @@
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
             <li class="btn btn-info btn-xs"><a href="{{ url('/home')}}">Dashboard</a></li>
-            <li class="btn btn-info btn-xs"><a href="{{ url('/master')}}">Master</a></li>
-            <li class="btn btn-info btn-xs"><a href="{{ url('/sparepart')}}">Master Sparepart</a></li>
-            <li class="active">Form Tambah Sparepart</li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master/form')}}">Form</a></li>
+            <li class="active">Form Sparepart</li>
         </ol>
     </div>
     <!-- /.col-lg-12 -->
@@ -60,7 +59,7 @@
                 <input name="gambar" type="file" class="form-control" id="gambar">
             </div>
             <div class="modal-footer col-md-12">
-                <a href="{{ url('/sparepart') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+                <a href="{{ url('/master/form') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
                 <button type="submit" class="btn btn-success" onclick="return confirm('Apakah anda ingin menyimpan data ini ??')">Simpan</button>
             </div>
         </form>

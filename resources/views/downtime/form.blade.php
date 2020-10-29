@@ -8,7 +8,7 @@
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
             <li class="btn btn-info btn-xs"><a href="{{ url('/home')}}">Dashboard</a></li>
-            <li class="btn btn-info btn-xs"><a href="{{ url('/downtime')}}">Master Downtime</a></li>
+            <li class="btn btn-info btn-xs"><a href="{{ url('/master/form')}}">Form</a></li>
             <li class="active">Form Downtime</li>
         </ol>
     </div>
@@ -20,44 +20,44 @@
             @csrf
             <div class="form-group">
                 <label for="id_posisi">Mesin</label>
-                <select type="text" name="id_posisi" class="form-control id="id_posisi">
+                <select type="text" name="id_posisi" class="form-control select2" id="id_posisi">
                     @foreach ($position as $position)
                     <option value="{{ $position->nama }}">{{ $position->nama }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
-                <label for="durasi">Durasi</label>
-                <div>
-                    <input type="text" class="form-control" id="durasi" name="durasi" placeholder="Dalam satuan menit" required>
-                </div>
-            </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label for="tanggal">Tanggal</label>
                 <div>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label for="jam">Jam Mulai</label>
                 <div>
                     <input type="time" class="form-control" id="jam" name="jam" required>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
+                <label for="durasi">Durasi</label>
+                <div>
+                    <input type="text" class="form-control" id="durasi" name="durasi" placeholder="Dalam satuan menit" required>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
                 <label for="user">PIC</label>
                 <div>
                     <input type="text" class="form-control" id="user" name="user" value="{{ Auth::user()->name }}"" readonly>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-12">
                 <label for="keterangan">Keterangan</label>
                 <div>
                     <textarea type="text" class="form-control" id="keterangan" name="keterangan" required></textarea>
                 </div>
             </div>
-            <div class="modal-footer">
-                <a href="{{ url('/downtime') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+            <div class="modal-footer col-md-12">
+                <a href="{{ url('/master/form') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
                 <button type="submit" class="btn btn-success" onclick="return confirm('Apakah anda ingin menyimpan data ini ??')">Simpan</button>
             </div>
         </form>

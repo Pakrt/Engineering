@@ -36,8 +36,8 @@
             </div>
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <a href="{{ url('/downtime/form') }}">
-                        <h3 class="box-title">Form Downtime</h3>
+                    <a href="{{ url('/master/form') }}">
+                        <h3 class="box-title">Form</h3>
                         <ul class="list-inline two-part">
                             <li><i class="icon-note text-info"></i></li>
                         </ul>
@@ -46,56 +46,14 @@
             </div>
             <div class="col-lg-3 col-md-3 col-xs-6">
                 <div class="white-box">
-                    <a href="{{ url('/history/form') }}">
-                        <h3 class="box-title">Form History</h3>
+                    <a href="{{ url('/master/mutasi') }}">
+                        <h3 class="box-title">Mutasi</h3>
                         <ul class="list-inline two-part">
                             <li><i class="icon-note text-info"></i></li>
                         </ul>
                     </a>
                 </div>
             </div>
-            @if (auth()->user()->role == 'Admin')
-            <div class="col-lg-3 col-md-3 col-xs-6">
-                <div class="white-box">
-                    <a href="{{ url('/outcome/form') }}">
-                        <h3 class="box-title">Form Barang Keluar</h3>
-                        <ul class="list-inline two-part">
-                            <li><i class="icon-note text-info"></i></li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-                <div class="white-box">
-                    <a href="{{ url('/income/form') }}">
-                        <h3 class="box-title">Form Barang Masuk</h3>
-                        <ul class="list-inline two-part">
-                            <li><i class="icon-note text-info"></i></li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-                <div class="white-box">
-                    <a href="{{ url('/outcome') }}">
-                        <h3 class="box-title">Data Barang Keluar</h3>
-                        <ul class="list-inline two-part">
-                            <li><i class="icon-folder-alt text-info"></i></li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-                <div class="white-box">
-                    <a href="{{ url('/income') }}">
-                        <h3 class="box-title">Data Barang Masuk</h3>
-                        <ul class="list-inline two-part">
-                            <li><i class="icon-folder-alt text-info"></i></li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-            @endif
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="white-box">
                     <a href="{{ url('/report') }}">

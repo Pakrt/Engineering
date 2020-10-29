@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sparepart;
 use App\Category;
+use App\Income;
 use App\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,6 +36,8 @@ class SparepartController extends Controller
 
     public function show($id)
     {
+        // $income = Income::where('sparepart_id', $id)
+        // ->get();
         $sparepart = Sparepart::find($id);
         return view('sparepart.show', compact('sparepart'));
     }

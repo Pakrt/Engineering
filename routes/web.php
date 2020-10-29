@@ -10,6 +10,9 @@ Route::get('/', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/master', 'HomeController@master')->name('master');
+Route::get('/master/form', 'HomeController@form')->name('form');
+Route::get('/master/mutasi', 'HomeController@mutasi')->name('mutasi');
+
 
 Auth::routes();
 Route::group(['middleware' => ['auth','checkRole:Admin']], function () {

@@ -39,19 +39,12 @@
             <div class="form-group">
                 <label for="id_posisi" class="control-label">Mesin</label>
                 <select type="text" name="id_posisi" class="form-control" id="id_posisi" required>
+                    <option value="{{ $component->position->id }}">{{ $component->position->id }} - {{ $component->position->nama }}</option>
                     @foreach ($position as $position)
                     <option value="{{ $position->id }}">{{ $position->id }} - {{ $position->nama }}</option>
                     @endforeach
                 </select>
-                <span class="help-block"><small>{{ $component->id_posisi }} - {{ $component->position->nama }}</small></span>
-
             </div>
-            {{-- <div class="form-group">
-                <label for="id_posisi">ID Posisi</label>
-                <div>
-                    <input type="text" class="form-control" id="id_posisi" name="id_posisi" value="{{$component->id_posisi}}" required>
-                </div>
-            </div> --}}
             <div class="form-group">
                 <label for="keterangan">Keterangan</label>
                 <div>

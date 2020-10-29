@@ -100,5 +100,85 @@
             </div>
         </div>
     </div>
+    <?php
+        // $incomes = DB::select('select * from incomes where sparepart_id = ?', $income->sparepart_id);
+        $income = DB::table('incomes')->where('sparepart_id', $sparepart->id)
+        ->get();
+        $outcome = DB::table('outcomes')->where('sparepart_id', $sparepart->id)
+        ->get();
+    ?>
+    <div class="col-md-6 col-xs-12">
+        <div class="white-box">
+
+            <ul class="nav nav-tabs tabs customtab">
+                <li class="active tab">
+                    <a href="#lbm" data-toggle="tab"> <span class="visible-xs"><i class="fa fa-home"></i></span> <span class="hidden-xs">Barang Masuk</span> </a>
+                </li>
+                <li class="tab">
+                    <a href="#lbk" data-toggle="tab"> <span class="visible-xs"><i class="fa fa-user"></i></span> <span class="hidden-xs">Barang Keluar</span> </a>
+                </li>
+            </ul>
+            <!-- /.tabs -->
+            <div class="tab-content">
+                <!-- .tabs 1 -->
+                <div class="tab-pane active" id="lbm">
+                    <div class="table-responsive m-t-5">
+                        <table id="myTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Kode LBM</th>
+                                    <th>Jumlah</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($income as $income)
+                                <tr>
+                                    <td>{{ $income->tanggal }}</td>
+                                    <td>{{ $income->kode }}</td>
+                                    <td>{{ $income->jumlah }}</td>
+                                    <td>{{ $income->keterangan }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.tabs1 -->
+                <!-- .tabs2 -->
+                <div class="tab-pane" id="lbk">
+                    <div class="table-responsive">
+                        <table id="myTables" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Kode LBK</th>
+                                    {{-- <th>Sparepart</th> --}}
+                                    <th>Jumlah</th>
+                                    {{-- <th>Satuan</th> --}}
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($outcome as $outcome)
+                                <tr>
+                                    <td>{{ $outcome->tanggal }}</td>
+                                    <td>{{ $outcome->kode }}</td>
+                                    {{-- <td>{{ $outcome->sparepart->nama }}</td> --}}
+                                    <td>{{ $outcome->jumlah }}</td>
+                                    {{-- <td>{{ $outcome->sparepart->unit->kode }}</td> --}}
+                                    <td>{{ $outcome->keterangan }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.tabs2 -->
+            </div>
+
+        </div>
+    </div>
 </div>
 @endsection

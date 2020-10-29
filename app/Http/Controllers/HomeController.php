@@ -32,4 +32,14 @@ class HomeController extends Controller
     {
         return view('master.index');
     }
+
+    public function form ()
+    {
+        return view('master.mform');
+    }
+
+    public function mutasi ()
+    {
+        return view('master.mmutasi');
+    }
 }
