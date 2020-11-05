@@ -17,7 +17,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="row">
             @if (auth()->user()->role == 'Admin')
-            <div class="col-lg-3 col-md-3 col-xs-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
                     <a href="{{ url('/outcome') }}">
                         <h3 class="box-title">Barang Keluar</h3>
@@ -28,7 +28,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="white-box">
                     <a href="{{ url('/income') }}">
                         <h3 class="box-title">Barang Masuk</h3>
