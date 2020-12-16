@@ -59,7 +59,7 @@ class SparepartController extends Controller
             $sparepart->gambar = $request->file('gambar')->getClientOriginalName();
             $sparepart->save();
         }
-        return redirect('/sparepart')->with('status', 'Data berhasil di update !!');
+        return redirect("/sparepart/$id/detail")->with('status', 'Data berhasil di update !!');
     }
 
     public function destroy($id)

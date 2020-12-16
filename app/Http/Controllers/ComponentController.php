@@ -51,7 +51,7 @@ class ComponentController extends Controller
         $component = Component::find($id);
         $component->update($request->all());
 
-        return redirect('/component')->with('status', 'Data berhasil di update !!');
+        return redirect("/component/$id/detail")->with('status', 'Data berhasil di update !!');
     }
 
     public function destroy($id)

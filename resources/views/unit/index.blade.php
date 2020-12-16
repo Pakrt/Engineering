@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Unit</h4> </div>
+        <h4 class="page-title text-white">Master Unit</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-5 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Data Downtime</h4> </div>
+        <h4 class="page-title text-white">Data Downtime</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -40,7 +40,7 @@
                             @foreach ($downtime as $downtime)
                             <tr>
                                 <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->tanggal }}</a></td>
-                                <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->id_posisi }}</a></td>
+                                <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->position->nama }}</a></td>
                                 <td><a href="/downtime/{{$downtime->id}}/show">&emsp;{{ $downtime->durasi}}</a></td>
                                 <td><a href="/downtime/{{$downtime->id}}/show">{{ $downtime->keterangan }}</a></td>
                                 {{-- <td>

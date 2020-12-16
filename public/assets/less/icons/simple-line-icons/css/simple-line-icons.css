@@ -7,7 +7,7 @@
 }
 /*
  Use the following CSS code if you want to have a class per icon.
- Instead of a list of all class selectors, you can use the generic [class*="icon-"] selector, but it's slower: 
+ Instead of a list of all class selectors, you can use the generic [class*="icon-"] selector, but it's slower:
 */
 .icon-user,
 .icon-people,
@@ -191,6 +191,7 @@
 .icon-social-spotify,
 .icon-social-stumbleupon,
 .icon-social-youtube,
+.icon-social-steam,
 .icon-social-dropbox {
   font-family: 'simple-line-icons';
   speak: none;

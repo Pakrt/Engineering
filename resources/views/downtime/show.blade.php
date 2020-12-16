@@ -15,7 +15,7 @@
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Downtime</h4> </div>
+        <h4 class="page-title text-white">Master Downtime</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -33,7 +33,7 @@
                 <div class="panel panel-default">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-header">
-                            <h2>{{$downtime->id_posisi}}</h2>
+                            <h2>{{$downtime->position->nama}}</h2>
                         </div>
                         <div class="panel-body">
                             <h3>Tanggal</h3>
@@ -41,9 +41,9 @@
                             <h3>Jam</h3>
                             <h4>&emsp;{{$downtime->jam}}</h4>
                             <h3>Durasi</h3>
-                            <h4>&emsp;{{$downtime->durasi}}</h4>
-                            <h3>User</h3>
-                            <h4>&emsp;{{$downtime->user}}</h4>
+                            <h4>&emsp;{{$downtime->durasi}} menit</h4>
+                            <h3>PIC</h3>
+                            <h4>&emsp;{{$downtime->user->crew->nama}}</h4>
                             <h3>Keterangan</h3>
                             <h4>&emsp;{{$downtime->keterangan}}</h4>
                         </div>

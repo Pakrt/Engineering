@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Form Barang Masuk</h4> </div>
+        <h4 class="page-title text-white">Form Barang Masuk</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -16,41 +16,54 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <form method="POST" action="/income/create">
-            @csrf
-            <div class="form-group">
-                <label for="kode" class="control-label">Kode LBM</label>
-                <input type="text" name="kode" class="form-control" id="kode" required>
+        <div class="white-box text-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST" action="/income/create">
+                        @csrf
+                        <div class="form-group col-md-6">
+                            <label for="kode" class="control-label">Kode LBM</label>
+                            <input type="text" name="kode" class="form-control text-white" id="kode" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tanggal" class="control-label">Tanggal</label>
+                            <input type="date" name="tanggal" class="form-control text-white" id="tanggal" required>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label class="control-label">Nama Sparepart</label>
+                            <select class="form-control text-white select2" name="sparepart_id" required>
+                                @foreach ($sparepart as $sparepart)
+                                <option value="{{ $sparepart->id }}">{{ $sparepart->category->kode }} - {{ $sparepart->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="jumlah" class="control-label">Jumlah</label>
+                            <input type="number" name="jumlah" class="form-control text-white" id="jumlah" required>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="keterangan" class="control-label">Keterangan</label>
+                            <textarea class="form-control text-white" name="keterangan" id="keterangan"></textarea>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="user" class="control-label">User</label>
+                            <select class="form-control text-white select2" name="sparepart_id" required>
+                                @foreach ($crew as $crew)
+                                <option value="{{ $crew->id }}">{{ $crew->nama }} - {{ $crew->scope }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="modal-footer col-md-12">
+                            <a href="{{ url('/master/form') }}" class="btn btn-warning" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
+                            <button type="submit" class="btn btn-success" onclick="return confirm('Apakah anda ingin menyimpan data ini ??')">Simpan</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label class="control-label">Nama Sparepart</label>
-                <select class="form-control select2" name="sparepart_id" required>
-                    @foreach ($sparepart as $sparepart)
-                    <option value="{{ $sparepart->id }}">{{ $sparepart->category->kode }} - {{ $sparepart->nama }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="jumlah" class="control-label">Jumlah</label>
-                <input type="number" name="jumlah" class="form-control" id="jumlah" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="tanggal" class="control-label">Tanggal</label>
-                <input type="date" name="tanggal" class="form-control" id="tanggal" required>
-            </div>
-            <div class="form-group">
-                <label for="keterangan" class="control-label">Keterangan</label>
-                <textarea class="form-control" name="keterangan" id="keterangan"></textarea>
-            </div>
-            <div class="form-group" hidden>
-                <label for="user" class="control-label">User</label>
-                <input type="text" name="user_id" class="form-control" id="user_id" value="{{Auth::user()->id}}">
-            </div>
-            <div class="modal-footer">
-                <a href="{{ url('/master/form') }}" class="btn btn-warning pull-left" onclick="return confirm('Yakin mau balik ??')">Kembali</a>
-                <button type="submit" class="btn btn-success" onclick="return confirm('Apakah anda ingin menyimpan data ini ??')">Simpan</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 @endsection

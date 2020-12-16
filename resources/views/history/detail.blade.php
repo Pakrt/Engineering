@@ -15,7 +15,7 @@
 
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master History</h4> </div>
+        <h4 class="page-title text-white">Master History</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -41,10 +41,10 @@
                             <h4>&emsp;{{$history->keterangan}}</h4>
                             <h3>Tanggal</h3>
                             <h4>&emsp;{{$history->tanggal}}</h4>
-                            <h3>User</h3>
-                            <h4>&emsp;{{$history->user}}</h4>
+                            <h3>PIC</h3>
+                            <h4>&emsp;{{$history->user->crew->nama}}</h4>
                         </div>
-                        <div class="panel-footer">
+                        <div class="modal-footer">
                             <form action="/history/{{ $history->id }}/delete" method="POST">
                                 @method('delete')
                                 @csrf

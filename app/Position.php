@@ -13,4 +13,9 @@ class Position extends Model
     {
         return $this->hasMany('App\Component', 'id_posisi');
     }
+
+    public function downtime()
+    {
+        return $this->hasMany('App\Downtime', 'id_posisi');
+    }
 }

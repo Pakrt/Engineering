@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Component History</h4> </div>
+        <h4 class="page-title text-white">Component History</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -18,7 +18,7 @@
     <div class="col-md-8 col-xs-12">
             <div class="white-box">
                 <div class="panel-heading">
-                    <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
+                    <a href="/history/form" class="btn btn-info btn-outline"><i class="mdi mdi-plus"></i></a>
                 </div>
                 @if (session('status'))
                     <div class="alert alert-success">
@@ -47,15 +47,6 @@
                                 <td><a href="/history/{{ $history->id}}/rinci">{{ $history->component->alias }}</a></td>
                                 <td>{{ $history->tanggal }}</td>
                                 <td>{{ $history->keterangan }}</td>
-                                {{-- <td>{{ $history->user }}</td>
-                                <td>
-                                    <form action="/history/{{ $history->id }}/delete" method="POST">
-                                        @method('delete')
-                                        @csrf
-                                        <a href="/history/{{ $history->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-5"><i class="ti-pencil-alt"></i></a>
-                                        <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
-                                    </form>
-                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -89,7 +80,9 @@
                         </div>
                         <div class="form-group">
                             <label for="user" class="control-label">PIC</label>
-                            <input name="user" type="text" class="form-control" id="user" value="{{ Auth::user()->name}}" readonly>
+                            <select class="form-control select2" name="user_id" required>
+                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->crew->scope }} - {{ Auth::user()->crew->nama }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">

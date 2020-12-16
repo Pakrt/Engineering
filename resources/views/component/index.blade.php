@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Master Component Page</h4> </div>
+        <h4 class="page-title text-white">Master Component Page</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -31,31 +31,19 @@
                     <table id="myTable" class="table table-striped">
                         <thead>
                             <tr>
-                                {{-- <th width="70" class="text-center">#</th> --}}
                                 <th>ID</th>
                                 <th>NAMA KOMPONEN</th>
                                 <th>KOMPONEN</th>
                                 <th>MESIN</th>
-                                {{-- <th>AKSI</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($components as $components)
                             <tr>
-                                {{-- <th scope="row"> &emsp; {{ $loop->iteration }}</th> --}}
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->id_komponen }}</a></td>
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->alias }}</a></td>
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->komponen }}</a></td>
                                 <td><a href="/component/{{ $components->id}}/detail">{{ $components->position->nama }}</a></td>
-                                {{-- <td>{{ $components->id_posisi }}</td> --}}
-                                {{-- <td class="d-inline">
-                                    <form action="/component/{{ $components->id }}/delete" method="POST">
-                                        @method('delete')
-                                        @csrf
-                                        <a href="/component/{{ $components->id }}/edit" class="btn btn-info btn-outline btn-circle btn-sm"><i class="ti-pencil-alt"></i></a>
-                                        <button type="submit" class="btn btn-danger btn-outline btn-circle btn-sm" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
-                                    </form>
-                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -90,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <label for="id_posisi" class="control-label">Mesin</label>
-                            <select type="text" name="id_posisi" class="form-control" id="id_posisi" required>
+                            <select type="text" name="id_posisi" class="form-control select2" id="id_posisi" required>
                                 @foreach ($position as $position)
                                 <option value="{{ $position->id }}">{{ $position->id }} - {{ $position->nama }}</option>
                                 @endforeach

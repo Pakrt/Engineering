@@ -31,9 +31,9 @@ class CrewController extends Controller
         return redirect('/crew')->with('status', 'Data user berhasil ditambahkan !!');
     }
 
-    public function store(Request $request)
+    public function form()
     {
-        //
+        return view('crew.form');
     }
 
     public function show($id)
@@ -58,7 +58,11 @@ class CrewController extends Controller
             $crew->avatar = $request->file('avatar')->getClientOriginalName();
             $crew->save();
         }
-        return redirect('/home')->with('status', ' Data berhasil diupdate !!');
+        $i = $crew->user_id;
+        $user = User::find($i);
+        $user->update($request->all());
+
+        return redirect("/crew/$id/detail")->with('status', ' Data berhasil diupdate !!');
     }
 
     public function destroy($id)

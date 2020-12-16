@@ -52,11 +52,21 @@ class User extends Authenticatable
 
     public function income()
     {
-        return $this->hasMany('App/Income');
+        return $this->hasMany('App\Income');
     }
 
     public function outcome()
     {
-        return $this->hasMany('App/Outcome');
+        return $this->hasMany('App\Outcome');
+    }
+
+    public function history()
+    {
+        return $this->hasMany('App\History');
+    }
+
+    public function downtime()
+    {
+        return $this->hasMany('App\Downtime');
     }
 }

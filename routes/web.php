@@ -13,9 +13,18 @@ Route::get('/master', 'HomeController@master')->name('master');
 Route::get('/master/form', 'HomeController@form')->name('form');
 Route::get('/master/mutasi', 'HomeController@mutasi')->name('mutasi');
 
+// Master Sparepart
+Route::get('/sparepart', 'SparepartController@index');
+Route::get('/sparepart/form', 'SparepartController@form');
+Route::post('/sparepart/create', 'SparepartController@create');
+Route::get('/sparepart/{id}/detail', 'SparepartController@show');
+Route::get('/sparepart/{id}/edit', 'SparepartController@edit');
+Route::post('/sparepart/{id}/update', 'SparepartController@update');
+Route::delete('/sparepart/{id}/delete', 'SparepartController@destroy');
+Route::get('/sparepart/alert', 'SparepartController@alert');
 
 Auth::routes();
-Route::group(['middleware' => ['auth','checkRole:Admin']], function () {
+Route::group(['middleware' => ['auth','checkRole:admin']], function () {
 
     Route::get('/category', 'CategoryController@index');
     Route::post('/category/create', 'CategoryController@create');
@@ -28,16 +37,6 @@ Route::group(['middleware' => ['auth','checkRole:Admin']], function () {
     Route::get('/unit/{id}/edit', 'UnitController@edit');
     Route::post('/unit/{id}/update', 'UnitController@update');
     Route::delete('/unit/{id}/delete', 'UnitController@destroy');
-
-    // Master Sparepart
-    Route::get('/sparepart', 'SparepartController@index');
-    Route::get('/sparepart/form', 'SparepartController@form');
-    Route::post('/sparepart/create', 'SparepartController@create');
-    Route::get('/sparepart/{id}/detail', 'SparepartController@show');
-    Route::get('/sparepart/{id}/edit', 'SparepartController@edit');
-    Route::post('/sparepart/{id}/update', 'SparepartController@update');
-    Route::delete('/sparepart/{id}/delete', 'SparepartController@destroy');
-    Route::get('/sparepart/alert', 'SparepartController@alert');
 
     Route::get('/income', 'IncomeController@index');
     Route::get('/income/form', 'IncomeController@form');
@@ -54,7 +53,7 @@ Route::group(['middleware' => ['auth','checkRole:Admin']], function () {
     Route::post('/outcome/{id}/update', 'OutcomeController@update');
 });
 
-Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
+Route::group(['middleware' => 'auth', 'checkRole:admin,user'], function () {
 
     // Master Position
     Route::get('/position', 'PositionController@index');
@@ -65,12 +64,14 @@ Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
 
     Route::get('/user', 'UserController@index');
     Route::get('/user/{id}/detail', 'UserController@show');
+    Route::get('/user/{id}/edit', 'UserController@edit');
     Route::post('/user/{id}/update', 'UserController@update');
     Route::get('/password', 'PasswordController@change');
     Route::put('/password/update', 'PasswordController@update');
 
     // Menu Crew Engineering
     Route::get('/crew', 'CrewController@index');
+    Route::get('/crew/form', 'CrewController@form');
     Route::post('/crew/create', 'CrewController@create');
     Route::get('/crew/{id}/detail', 'CrewController@show');
     Route::get('/crew/{id}/edit', 'CrewController@edit');
@@ -140,7 +141,7 @@ Route::group(['middleware' => 'auth', 'checkRole:Admin,Crew'], function () {
     // Master Component
     Route::get('/component', 'ComponentController@index');
     Route::post('/component/create', 'ComponentController@create');
-    Route::get('/component/{id_komponen}/detail', 'ComponentController@show');
+    Route::get('/component/{id}/detail', 'ComponentController@show');
     Route::get('/component/{id}/edit', 'ComponentController@edit');
     Route::post('/component/{id}/update', 'ComponentController@update');
     Route::delete('/component/{id}/delete', 'ComponentController@destroy');

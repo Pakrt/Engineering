@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sparepart;
 use App\Outcome;
+use App\Crew;
 use Illuminate\Http\Request;
 
 class OutcomeController extends Controller
@@ -20,6 +21,10 @@ class OutcomeController extends Controller
 
         $outcome = Sparepart::findOrFail($request->sparepart_id);
         $outcome->jumlah -= $request->jumlah;
+        // $this->validate($request, [
+        //     // 'id_komponen' => 'unique:components'
+        //     'jumlah' >= 'jumlah'
+        // ]);
         $outcome->save();
 
         return redirect('/outcome')->with('status', 'Data berhasil ditambahkan !!');
@@ -27,8 +32,9 @@ class OutcomeController extends Controller
 
     public function form()
     {
+        $crew = Crew::all();
         $sparepart = Sparepart::all();
-        return view('outcome.form', compact('sparepart'));
+        return view('outcome.form', compact('sparepart'), compact('crew'));
     }
 
     public function show(outcome $outcome)

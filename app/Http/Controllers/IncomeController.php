@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Crew;
 use App\Sparepart;
 use App\Income;
 use Illuminate\Http\Request;
@@ -27,8 +28,9 @@ class IncomeController extends Controller
 
     public function form()
     {
+        $crew = Crew::all();
         $sparepart = Sparepart::all();
-        return view('income.form', compact('sparepart'));
+        return view('income.form', compact('sparepart'), compact('crew'));
     }
 
     public function show(Income $income)

@@ -24,7 +24,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Crew Engineering</h4> </div>
+        <h4 class="page-title text-white">Crew Engineering</h4> </div>
     <div class="col-lg-9 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -35,7 +35,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
-<div class="col-md-8 col-sm-12 col-lg-8">
+<div class="col-md-6 col-sm-12 col-lg-6">
     <div class="panel">
         <div class="p-30">
             <div class="row">
@@ -46,35 +46,39 @@
                     </button> --}}
                 </div>
                 <div class="col-xs-12">
-                    <h3 class="m-b-0">&emsp;{{ $crew->nama }}</h3>
                     {{-- <a href="/crew/{{ $crew->id }}/edit" class="btn btn-lg pull-right" style="background-color: transparent; color:white"><i class="ti-pencil"></i></a> --}}
                     {{-- <h4>&emsp; {{ $crew->user->role }} Engineering</h4> --}}
+                    <h2 class="m-b-0" style="font-family: Georgia"><b>&emsp;{{ $crew->nama }} </b>@if ($crew->user->role == 'admin') <small>&emsp;(Administrator)</small>@endif</h2>
+                    @if (Auth::user()->role == 'admin')
+                    <a href="/crew/{{ $crew->id }}/edit" class="btn btn-lg pull-right" style="background-color: transparent; color:white"><i class="ti-pencil"></i></a>
+                    @endif
+                    <h4>&emsp; {{$crew->scope}} Engineer</h4>
                 </div>
             </div>
             <hr class="m-t-10">
             <div class="text-center row m-t-20 col-12">
                 <div class="col-md-4 col-xs-6">
-                    <h4>Scope</h4>
+                    <h4><b>Scope </b></h4>
                     <p>{{ $crew->scope }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Jenis Kelamin</h4>
+                    <h4><b>Jenis Kelamin </b></h4>
                     <p>{{ $crew->jenis_kelamin }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Tanggal Lahir</h4>
+                    <h4><b>Tanggal Lahir </b></h4>
                     <p>{{ $crew->tanggal_lahir }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Alamat</h4>
+                    <h4><b>Alamat </b></h4>
                     <p>{{ $crew->alamat }}</p>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <h4>Kontak</h4>
-                    <a href="https://wa.me/{{$crew->kontak}}" target="_blank"><i class="mdi mdi-whatsapp"></i> {{$crew->kontak}}</a>
+                    <h4><b>Kontak </b></h4>
+                    <a href="https://wa.me/{{$crew->kontak}}" target="_blank"><i class="mdi mdi-whatsapp"></i> 0{{$crew->kontak}}</a>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <h4>Email</h4>
+                    <h4><b>Email </b></h4>
                     <p>{{ $crew->user->email }}</p>
                 </div>
             </div>

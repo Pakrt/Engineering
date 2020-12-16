@@ -20,11 +20,11 @@
         background-color: rgb(103, 155, 253);
     }
 </style>
-@section('tittle') Master User @endsection
+@section('tittle') Data User @endsection
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Crew Engineering</h4> </div>
+        <h4 class="page-title text-white">Crew Engineering</h4> </div>
     <div class="col-lg-9 col-sm-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -45,35 +45,35 @@
                     </button>
                 </div>
                 <div class="col-xs-12">
-                    <h2 class="m-b-0">&emsp;{{ $crew->nama }}</h2>
-                    <a href="/crew/{{ $crew->id }}/edit" class="btn btn-lg pull-right" style="background-color: transparent; color:white"><i class="ti-pencil"></i></a>
-                    <h4>&emsp; {{ Auth::user()->role }} Engineering</h4>
+                    <h2 class="m-b-0" style="font-family: Georgia"><b>&emsp;{{ $user->crew->nama }} </b>@if (Auth::user()->role == 'admin') <small>&emsp;(Administrator)</small>@endif</h2>
+                    <a href="/user/{{ $user->id }}/edit" class="btn btn-lg pull-right" style="background-color: transparent; color:white"><i class="ti-pencil"></i></a>
+                    <h4>&emsp; {{$user->crew->scope}} Engineer</h4>
                 </div>
             </div>
             <hr class="m-t-10">
             <div class="text-center row m-t-20 col-6">
                 <div class="col-md-4 col-xs-6">
-                    <h4>Scope</h4>
-                    <p>{{ $crew->scope }}</p>
+                    <h4><b> Scope </b></h4>
+                    <p>{{ $user->crew->scope }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Jenis Kelamin</h4>
-                    <p>{{ $crew->jenis_kelamin }}</p>
+                    <h4><b> Jenis Kelamin </b></h4>
+                    <p>{{ $user->crew->jenis_kelamin }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Tanggal Lahir</h4>
-                    <p>{{ $crew->tanggal_lahir }}</p>
+                    <h4><b> Tanggal Lahir </b></h4>
+                    <p>{{ $user->crew->tanggal_lahir }}</p>
                 </div>
                 <div class="col-md-4 col-xs-6">
-                    <h4>Alamat</h4>
-                    <p>{{ $crew->alamat }}</p>
+                    <h4><b> Alamat </b></h4>
+                    <p>{{ $user->crew->alamat }}</p>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <h4>Kontak</h4>
-                    <p>{{ $crew->kontak }}</p>
+                    <h4><b> Kontak </b></h4>
+                    <p>0{{ $user->crew->kontak }}</p>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <h4>Email</h4>
+                    <h4><b> Email </b></h4>
                     <p>{{ Auth::user()->email }}</p>
                 </div>
                 </div>

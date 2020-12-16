@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Crew Engineering</h4> </div>
+        <h4 class="page-title text-white">Crew Engineering</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -15,11 +15,12 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-12 col-xs-12">
         <div class="panel">
-            @if (auth()->user()->role == 'Admin')
+            @if (auth()->user()->role == 'admin')
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button>
+                {{-- <button type="button" class="btn btn-info btn-outline" data-toggle="modal" data-target="#exampleModal"><i class="mdi mdi-plus"></i></button> --}}
+                <a href="{{ url('/crew/form')}}" class="btn btn-info btn-outline">Tambah Data</a>
             </div>
             @endif
             @if (session('status'))
@@ -29,43 +30,33 @@
             </div>
             @endif
             <div class="white-box">
-                <div class="table-responsive">
-                    <table id="myTable" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th width="70" class="text-center">#</th>
-                                <th>Nama</th>
-                                <th>Scope</th>
-                                @if (auth()->user()->role == 'Admin')
-                                <th>Aksi</th>
-                                @endif
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($crew as $crew)
-                            <tr>
-                                <th scope="row"> &emsp; {{ $loop->iteration }}</th>
-                                <td><a href="/crew/{{ $crew->id }}/detail"><?=$crew->nama; ?></a></td>
-                                <td><a href="/crew/{{ $crew->id }}/detail"><?=$crew->scope; ?> Engineer</a></td>
-                                @if (auth()->user()->role == 'Admin')
-                                <td>
-                                    <form action="/crew/{{ $crew->id }}/delete" method="POST">
-                                        @method('delete')
-                                        @csrf
-                                        {{-- <a href="/crew/{{ $user->id }}/edit" class="btn btn-info btn-outline btn-circle btn-md m-r-10 d-inline"><i class="ti-pencil-alt"></i></a> --}}
-                                        <button type="submit" class="btn btn-danger btn-outline btn-circle btn-md m-r-5 d-inline" onclick="return confirm('Yakin mau hapus datanya niiih ??')"><i class="ti-trash"></i></button>
-                                    </form>
-                                </td>
-                                @endif
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                <div class="row el-element-overlay m-b-40">
+                    @foreach ($crew as $crew)
+                    <!-- /.usercard -->
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <div class="white-box">
+                            <div class="el-card-item">
+                                <div class="el-card-avatar el-overlay-1"> <img src="{{ $crew->user->getAvatar() }}" style="height: 250px" />
+                                    <div class="el-overlay">
+                                        <ul class="el-info">
+                                            <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $crew->user->getAvatar() }}"><i class="icon-magnifier"></i></a></li>
+                                            <li><a class="btn default btn-outline" href="/crew/{{ $crew->id }}/detail"><i class="icon-user"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="el-card-content">
+                                    <h3 class="box-title">{{ $crew->nama}}</h3> <small>{{$crew->scope}} Engineer</small>
+                                    <br/> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.usercard-->
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-
+</div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -3,7 +3,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Component History</h4> </div>
+        <h4 class="page-title text-white">Component History</h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -47,7 +47,7 @@
                                 <td><a href="/history/{{$history->id}}/rinci">{{ $history->id_komponen }}</a></td>
                                 <td><a href="/history/{{$history->id}}/rinci">{{ $history->component->alias }}</a></td>
                                 <td>{{ $history->tanggal }}</td>
-                                <td>{{ $history->user }}</td>
+                                <td>{{ $history->user->crew->nama }}</td>
                                 <td>{{ $history->keterangan }}</td>
                                 {{-- <td>{{ $history->updated_at }}</td>
                                 <td>
@@ -84,7 +84,9 @@
                         </div>
                         <div class="form-group">
                             <label for="user" class="control-label">PIC</label>
-                            <input type="text" name="user" class="form-control" id="user" value="{{Auth::user()->name}}" readonly>
+                            <select class="form-control select2" name="user_id" required>
+                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->crew->scope }} - {{ Auth::user()->crew->nama }}</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="keterangan" class="control-label">Keterangan</label>

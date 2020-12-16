@@ -24,6 +24,8 @@
     <link href="{{ asset('assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- animation CSS -->
     <link href="{{ asset('assets/css/animate.css')}}" rel="stylesheet">
+    <!-- Popup CSS -->
+    <link href="{{ asset('assets/plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
     <!-- color CSS -->
@@ -50,7 +52,7 @@
                     $total = count($alert) > 0;
                 ?>
                 <ul class="nav navbar-top-links navbar-right pull-right">
-                    @if(auth()->user()->role == 'Admin')
+                    @if(auth()->user()->role == 'admin')
                     <!-- .Task dropdown -->
                     <li class="dropdown">
                         <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-alert-circle-outline"></i>
@@ -136,34 +138,35 @@
                     <li> <a href="{{ url('/maintenance') }}"><i class="mdi mdi-wrench"></i> <span class="hide-menu"> Maintenance</span></a></li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-link"></i> <span class="hide-menu"> Masters<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            @if (auth()->user()->role == 'Admin')
+                            @if (auth()->user()->role == 'admin')
                             <li> <a href="{{ url('/category') }}"><i class="mdi mdi-archive"></i><span class="hide-menu"> Master Category</span></a> </li>
                             @endif
                             <li> <a href="{{ url('/component') }}"><i class="mdi mdi-chip"></i><span class="hide-menu"> Master Component</span></a> </li>
                             <li> <a href="{{ url('/crew')}} "><i class="mdi mdi-worker"></i><span class="hide-menu"> Master Crew</span></a> </li>
                             <li> <a href="{{ url('/position') }}"><i class="mdi mdi-sitemap"></i><span class="hide-menu"> Master Position</span></a> </li>
-                            @if (auth()->user()->role == 'Admin')
                             <li> <a href="{{ url('/sparepart') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Master Sparepart</span></a> </li>
+                            @if (auth()->user()->role == 'admin')
                             <li> <a href="{{ url('/unit') }}"><i class="mdi mdi-database"></i><span class="hide-menu"> Master Unit</span></a> </li>
                             @endif
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="icon-note"></i> <span class="hide-menu">Form<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            @if (auth()->user()->role == 'Admin')
+                            @if (auth()->user()->role == 'admin')
                             <li> <a href="{{ url('/outcome/form') }}"><i class="mdi mdi-package-up"></i><span class="hide-menu"> Form Barang Keluar</span></a> </li>
                             <li> <a href="{{ url('/income/form') }}"><i class="mdi mdi-package-down"></i><span class="hide-menu"> Form Barang Masuk</span></a> </li>
                             @endif
                             <li> <a href="{{ url('/history/form') }}"><i class="mdi mdi-file-multiple"></i><span class="hide-menu"> Form Component History</span></a> </li>
                             <li> <a href="{{ url('/downtime/form') }}"><i class="mdi mdi-history"></i><span class="hide-menu"> Form Downtime</span></a> </li>
-                            @if (auth()->user()->role == 'Admin')
+                            @if (auth()->user()->role == 'admin')
+                            <li> <a href="{{ url('/crew/form') }}"><i class="mdi mdi-worker"></i><span class="hide-menu"> Form Karyawan</span></a> </li>
                             <li> <a href="{{ url('/sparepart/form') }}"><i class="mdi mdi-bug"></i><span class="hide-menu"> Form Sparepart</span></a> </li>
                             @endif
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-folder"></i> <span class="hide-menu">Mutasi<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            @if (auth()->user()->role == 'Admin')
+                            @if (auth()->user()->role == 'admin')
                             <li> <a href="{{ url('/outcome') }}"><i class="mdi mdi-package-up"></i><span class="hide-menu"> Barang Keluar</span></a> </li>
                             <li> <a href="{{ url('/income') }}"><i class="mdi mdi-package-down"></i><span class="hide-menu"> Barang Masuk</span></a> </li>
                             @endif
@@ -235,6 +238,9 @@
     <script src="{{ asset('assets/js/waves.js')}}"></script>
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('assets/js/custom.min.js')}}"></script>
+    <!-- Magnific popup JavaScript -->
+    <script src="{{ asset('assets/plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js')}}"></script>
 
     <script src="{{ asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.js')}}"></script>
     <!-- start - This is for export functionality only -->

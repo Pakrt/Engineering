@@ -24,7 +24,7 @@
 @section('content')
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Detail Sparepart</h4> </div>
+        <h4 class="page-title text-white">Detail Sparepart</h4> </div>
     <div class="col-lg-9 col-sm-8 col-xs-12">
         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button> -->
         <ol class="breadcrumb">
@@ -61,11 +61,8 @@
                 </div>
                 <hr>
                 <div class="row text-center m-t-10">
-                    <div class="col-md-6 b-r"><strong>Spesifikasi</strong>
+                    <div class="col-md-12 b-r"><strong>Spesifikasi</strong>
                         <h3>{{$sparepart->spesifikasi}}</h3>
-                    </div>
-                    <div class="col-md-6"><strong>Keterangan</strong>
-                        <h3>{{$sparepart->keterangan}}</h3>
                     </div>
                 </div>
                 <hr>
@@ -74,7 +71,7 @@
                         <h1>{{$sparepart->minimum}}</h1>
                     </div>
                     <div class="col-md-4 col-xs-6 b-r"><strong>Stok</strong>
-                        @if ($sparepart->jumlah < $sparepart->minimum)
+                        @if ($sparepart->jumlah <= $sparepart->minimum)
                         <h1 style="color: red">{{$sparepart->jumlah}}</h1>
                         <small>Segera PP lagi</small>
                         @else
@@ -85,6 +82,7 @@
                         <h1>{{$sparepart->unit->kode}}</h1>
                     </div>
                 </div>
+                @if (Auth::user()->role == 'admin')
                 <hr>
                 <div class="text-center">
                     <form action="/sparepart/{{ $sparepart->id }}/delete" method="POST">
@@ -97,6 +95,7 @@
                         <button type="submit" class="btn btn-danger btn-outline" onclick="return confirm('Yakin mau hapus datanya niiih ??')">Hapus Data</button>
                     </form>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -148,15 +147,13 @@
                 <!-- /.tabs1 -->
                 <!-- .tabs2 -->
                 <div class="tab-pane" id="lbk">
-                    <div class="table-responsive">
+                    <div class="table-responsive m-t-5">
                         <table id="myTables" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Tanggal</th>
                                     <th>Kode LBK</th>
-                                    {{-- <th>Sparepart</th> --}}
                                     <th>Jumlah</th>
-                                    {{-- <th>Satuan</th> --}}
                                     <th>Keterangan</th>
                                 </tr>
                             </thead>
@@ -165,9 +162,7 @@
                                 <tr>
                                     <td>{{ $outcome->tanggal }}</td>
                                     <td>{{ $outcome->kode }}</td>
-                                    {{-- <td>{{ $outcome->sparepart->nama }}</td> --}}
                                     <td>{{ $outcome->jumlah }}</td>
-                                    {{-- <td>{{ $outcome->sparepart->unit->kode }}</td> --}}
                                     <td>{{ $outcome->keterangan }}</td>
                                 </tr>
                                 @endforeach
