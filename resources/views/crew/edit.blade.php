@@ -65,10 +65,8 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="role" class="control-label">Role</label>
-                        <select type="text" name="role" class="form-control text-white" id="role">
-                            <option value="Admin" @if($crew->user->role =='admin') selected @endif>Admin</option>
-                            <option value="Crew" @if($crew->user->role =='Crew') selected @endif>Crew</option>
-                            <option value="Lain" @if($crew->user->role =='Lain') selected @endif>Lain-lain</option>
+                        <select type="text" name="role" class="form-control" id="role">
+                            <option value="{{$crew->user->role}}">{{$crew->user->role}}</option>
                         </select>
                     </div>
                 </div>

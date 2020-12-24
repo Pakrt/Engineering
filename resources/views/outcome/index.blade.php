@@ -35,6 +35,7 @@
                             <th>Jumlah</th>
                             <th>Satuan</th>
                             <th>Keterangan</th>
+                            <th>User</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -47,6 +48,7 @@
                             <td>{{ $outcome->jumlah }}</td>
                             <td>{{ $outcome->sparepart->unit->kode }}</td>
                             <td>{{ $outcome->keterangan }}</td>
+                            <td>{{ $outcome->user->crew->nama }}</td>
                             <td>
                                 <form action="/outcome/{{$outcome->id}}/delete" method="POST">
                                     @method('delete')
