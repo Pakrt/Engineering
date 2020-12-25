@@ -46,7 +46,7 @@
                             <textarea class="form-control text-white" name="keterangan" id="keterangan">{{$outcome->keterangan}}</textarea>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="user" class="control-label">User</label>
+                            <label for="user_id" class="control-label">User</label>
                             <select class="form-control select2" name="user_id" required>
                                 <option value="{{ $outcome->user_id }}">{{ $outcome->user->crew->scope }} - {{ $outcome->user->name }}</option>
                             </select>

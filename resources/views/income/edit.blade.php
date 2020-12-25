@@ -46,7 +46,7 @@
                             <textarea class="form-control text-white" name="keterangan" id="keterangan">{{$income->keterangan}}</textarea>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="user" class="control-label">User</label>
+                            <label for="user_id" class="control-label">User</label>
                             <select class="form-control select2" name="user_id" required>
                                 <option value="{{ $income->user_id }}">{{ $income->user->crew->scope }} - {{ $income->user->name }}</option>
                             </select>

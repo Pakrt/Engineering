@@ -48,11 +48,12 @@
                             <textarea class="form-control text-white" name="keterangan" id="keterangan"></textarea>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="user" class="control-label">User</label>
-                            <select class="form-control text-white select2" name="sparepart_id" required>
-                                @foreach ($crew as $crew)
-                                <option value="{{ $crew->id }}">{{ $crew->nama }} - {{ $crew->scope }}</option>
-                                @endforeach
+                            <label for="user_id" class="control-label">User</label>
+                            <select class="form-control select2" name="user_id" required>
+                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->crew->nama }} - {{ Auth::user()->crew->scope }}</option>
+                                <!-- @foreach ($crew as $crew)
+                                <option value="{{ $crew->user->id }}">{{ $crew->nama }} - {{ $crew->scope }}</option>
+                                @endforeach -->
                             </select>
                         </div>
 
