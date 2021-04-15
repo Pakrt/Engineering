@@ -88,11 +88,11 @@
                     <form action="/sparepart/{{ $sparepart->id }}/delete" method="POST">
                         @method('delete')
                         @csrf
-                        <a href="/sparepart" class="btn btn-warning btn-outline">Kembali</a>
+                        <a href="/sparepart" class="btn btn-warning btn-outline">KEMBALI</a>
                         <span>&nbsp;</span>
-                        <a href="/sparepart/{{ $sparepart->id }}/edit" class="btn btn-info btn-outline">Ubah Data</a>
+                        <a href="/sparepart/{{ $sparepart->id }}/edit" class="btn btn-info btn-outline">EDIT</a>
                         <span>&nbsp;</span>
-                        <button type="submit" class="btn btn-danger btn-outline" onclick="return confirm('Yakin mau hapus datanya niiih ??')">Hapus Data</button>
+                        {{-- <button type="submit" class="btn btn-danger btn-outline" onclick="return confirm('Yakin mau hapus datanya niiih ??')">Hapus</button> --}}
                     </form>
                 </div>
                 @endif

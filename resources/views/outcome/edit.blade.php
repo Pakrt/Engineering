@@ -49,6 +49,9 @@
                             <label for="user_id" class="control-label">User</label>
                             <select class="form-control select2" name="user_id" required>
                                 <option value="{{ $outcome->user_id }}">{{ $outcome->user->crew->scope }} - {{ $outcome->user->name }}</option>
+                                @foreach ($crew as $crew)
+                                <option value="{{ $crew->user->id }}">{{ $crew->scope }} - {{ $crew->nama }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="modal-footer col-md-12">

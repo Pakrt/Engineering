@@ -44,8 +44,9 @@ class OutcomeController extends Controller
 
     public function edit($id)
     {
+        $crew = Crew::all();
         $outcome = Outcome::find($id);
-        return view('outcome.edit', compact('outcome'));
+        return view('outcome.edit', compact('outcome'), compact('crew'));
     }
 
     public function update(Request $request, $id)

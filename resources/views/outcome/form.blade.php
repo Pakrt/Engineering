@@ -53,9 +53,9 @@
                         <div class="form-group col-md-4">
                             <label for="user_id" class="control-label">User</label>
                             <select class="form-control text-white select2" name="user_id" required>
-                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->crew->nama }} - {{ Auth::user()->crew->scope }}</option>
+                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->crew->scope }} - {{ Auth::user()->crew->nama }}</option>
                                 @foreach ($crew as $crew)
-                                <option value="{{ $crew->user->id }}">{{ $crew->nama }} - {{ $crew->scope }}</option>
+                                <option value="{{ $crew->user->id }}">{{ $crew->scope }} - {{ $crew->nama }}</option>
                                 @endforeach
                             </select>
                         </div>

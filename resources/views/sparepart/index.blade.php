@@ -15,7 +15,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-8 col-xs-12">
         <div class="panel">
             <div class="panel-heading">
                 <a href="/sparepart/form" class="btn btn-info btn-outline">Tambah Data</a>

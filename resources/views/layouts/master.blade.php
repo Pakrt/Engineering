@@ -127,12 +127,12 @@
                     <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3>
                 </div>
                 <ul class="nav" id="side-menu">
-                    <li class="user-pro">
+                    {{-- <li class="user-pro">
                         <a href="#">
                             <img src="{{ Auth::user()->getAvatar() }}" alt="user-img" class="img-circle" >
                             <span class="hide-menu">{{Auth::user()->name }}</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="devider"></li>
                     <li> <a href="{{ url('/home') }}"><i class="mdi mdi-home-variant"></i> <span class="hide-menu"> Dashboard</span></a></li>
                     <li> <a href="{{ url('/maintenance') }}"><i class="mdi mdi-wrench"></i> <span class="hide-menu"> Maintenance</span></a></li>
